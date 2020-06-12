@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{67d5db2f-76e9-44c4-bddd-7717d23496b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{00b5cd02-f735-466b-8a05-4005d9f453f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\plugin.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VRFCore.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyStartingPoint.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\plugin.cxx">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VRFCore.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyStartingPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
