@@ -1,13 +1,14 @@
 # Basic MAK VR-Forces Backend Plugin
 This is the C++ project for a basic MAK VR-Forces Backend Plugin.
-This is created because using MAK VR-Forces' example as a starting point is generally a bad idea. The example contains relative links that are broken when project is moved out of the folder. It becomes a bad habit for developers to have their entire project situated in the examples' folder. It also contains too much unnecessary stuff that developers have to remove. Most times, the unnecessary stuff are just left inside, becoming dead load, slowing down build and development time.
+This is a good starting point for creating simple plugins.
 
 ## Quick start
 1) git clone
+2) Set environment variables (refer to `Environment Variables`)
 2) Open solution
 3) Select `Release` as active configuration
 4) Build
-5) Plugin is now inside VRF's plugin folder
+5) Plugin is now inside VRF's plugin folder. Plugin's XML is in VRF's appData\plugins folder
 
 ## Essential software
 - Visual Studio 2019
