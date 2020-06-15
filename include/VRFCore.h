@@ -73,7 +73,4 @@ namespace VRFCore
 	{
 		return *(VRFCgf()->fireManager());
 	}
-
-	//todo: a quick hack for me to retrieve keyboard input
-	extern int threadInput;
 }
