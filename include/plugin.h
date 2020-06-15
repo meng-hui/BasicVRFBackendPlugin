@@ -1,7 +1,7 @@
 #pragma once
 
-#include <MyStartingPoint.h>
-#include <VRFCore.h>
+#include "MyStartingPoint.h"
+#include "VRFCore.h"
 
 #include <memory>
 #include <vrfcgf/vrfPluginExtension.h>				//mandatory VRF plugin callbacks

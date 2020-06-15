@@ -1,6 +1,6 @@
 #pragma once
 
-#include "vrfcgf\cgf.h"
+#include <vrfcgf/cgf.h>
 
 #include <fmt/core.h>
 
