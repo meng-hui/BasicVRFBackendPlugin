@@ -145,7 +145,8 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
     <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/release"</Command>
+      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/release"
+xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
