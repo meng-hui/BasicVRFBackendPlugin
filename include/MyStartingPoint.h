@@ -5,7 +5,7 @@
 using namespace std;
 using namespace fmt;
 
-namespace Lasershoot
+namespace BasicVRFBEPlugin
 {
 	class MyStartingPoint
 	{

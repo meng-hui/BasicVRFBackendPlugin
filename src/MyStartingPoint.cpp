@@ -1,6 +1,6 @@
 #include <MyStartingPoint.h>
 
-namespace Lasershoot
+namespace BasicVRFBEPlugin
 {
     /// <summary>
     /// Default Constructor

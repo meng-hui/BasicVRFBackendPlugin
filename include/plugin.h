@@ -6,7 +6,7 @@
 #include <memory>
 #include <vrfcgf/vrfPluginExtension.h>				//mandatory VRF plugin callbacks
 
-using namespace Lasershoot;
+using namespace BasicVRFBEPlugin;
 
 #ifdef EXPORT_FUNCTIONS
 #define DLL_EXPORT __declspec(dllexport)
