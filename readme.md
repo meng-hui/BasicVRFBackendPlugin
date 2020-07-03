@@ -57,6 +57,7 @@ This is a good starting point for creating simple plugins.
 ## Nuget packages
 | Package  | Version  | Purpose  | Nuget Uri  | Comments  |
 |---|---|---|---|---|
+| nlohmann.json  | 3.7.3  | JSON SerDes  | https://www.nuget.org/packages/nlohmann.json/  | https://github.com/nlohmann/json  |
 | fmt  | 6.2.1  | Formatting library  | https://www.nuget.org/packages/fmt/  | https://fmt.dev/  |
 
 ## Environment Variables
