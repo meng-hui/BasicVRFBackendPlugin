@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Config.h"
 #include "MyStartingPoint.h"
 #include "VRFCore.h"
 

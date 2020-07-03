@@ -17,7 +17,15 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
 
     VRFCore::cgf = cgf;
 
-    myStartingPoint = std::make_unique<MyStartingPoint>(cgf);
+    unique_ptr<Config> config = std::make_unique<Config>();
+    if (config.get()->settings.get()->isEnable)
+    {
+        myStartingPoint = std::make_unique<MyStartingPoint>(cgf, move(config));
+    }
+    else
+    {
+        print("[{}] Plugin disabled\n", __FUNCTION__);
+    }
 
     return true;
 }

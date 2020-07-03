@@ -71,5 +71,13 @@ Add all the below variables into system's environment variables (can also be add
 > MAK_RTIDIR
 > - RTI install location (e.g C:/MAK/makRti4.5)
 
+## Configuration file
+Parameters for the application can be changed via an external configuration file located in the same folder as the DLL. Configuration file is in the form DLLNAME.json
+| Field  | Data type  | Value(s)  | Usage  |
+|---|---|---|---|
+| IsEnable  | Boolean  | true or false  | Enable/disable plugin  |
+| IsEnableDebugPrint  | Boolean  | true or false  | Enable/disable debug console print-out  |
+| IsEnablePostTickLogic  | Boolean  | true or false  | Enable/disable code in PostTick  |
+
 ## Settings
 TODO: write down any settings that has to be applied manually

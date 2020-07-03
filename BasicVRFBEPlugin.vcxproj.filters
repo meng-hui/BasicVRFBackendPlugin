@@ -7,6 +7,9 @@
     <Filter Include="include">
       <UniqueIdentifier>{00b5cd02-f735-466b-8a05-4005d9f453f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Data">
+      <UniqueIdentifier>{5b5c1be1-4c20-43f8-abed-691b26a8be46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\plugin.h">
@@ -18,6 +21,12 @@
     <ClInclude Include="include\MyStartingPoint.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Config.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\Settings.h">
+      <Filter>include\Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\plugin.cxx">
@@ -27,6 +36,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\MyStartingPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Config.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

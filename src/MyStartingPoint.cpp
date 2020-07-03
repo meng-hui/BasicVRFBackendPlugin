@@ -1,17 +1,22 @@
 #include "MyStartingPoint.h"
 
+#include <boost/filesystem.hpp>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
+
 namespace BasicVRFBEPlugin
 {
     /// <summary>
     /// Default Constructor
     /// </summary>
     /// <param name="cgf">The all important access into the VRF world</param>
-    MyStartingPoint::MyStartingPoint(DtCgf* cgf)
+    MyStartingPoint::MyStartingPoint(DtCgf* cgf, unique_ptr<Config> config)
 	{
 		this->cgf = cgf;
+        this->config = move(config);
 
         AddCallbacks();
-
         print("[{}]\n", __FUNCTION__);
 	}
 
@@ -21,6 +26,9 @@ namespace BasicVRFBEPlugin
     MyStartingPoint::~MyStartingPoint()
 	{
         RemoveCallbacks();
+
+        cgf = nullptr;
+        config.reset();
 
         print("[{}]\n", __FUNCTION__);
 	}
@@ -66,6 +74,11 @@ namespace BasicVRFBEPlugin
 
     void MyStartingPoint::PostTick(void* usr)
     {
+        if (!config.get()->settings.get()->isEnablePostTickLogic)
+        {
+            return;
+        }
+        
         print("[{}]\n", __FUNCTION__);
     }
 }

@@ -1,9 +1,10 @@
 #pragma once
 
+#include "Config.h"
 #include "VRFCore.h"
 
-using namespace std;
 using namespace fmt;
+using namespace std;
 
 namespace BasicVRFBEPlugin
 {
@@ -14,7 +15,7 @@ namespace BasicVRFBEPlugin
 			/// Default Constructor
 			/// </summary>
 			/// <param name="cgf">The all important access into the VRF world</param>
-			MyStartingPoint(DtCgf* cgf);
+			MyStartingPoint(DtCgf* cgf, unique_ptr<Config> config);
 
 			/// <summary>
 			/// Default Destructor
@@ -89,5 +90,10 @@ namespace BasicVRFBEPlugin
 			/// The all important access into the VRF world
 			/// </summary>
 			DtCgf* cgf = nullptr;
+
+			/// <summary>
+			/// Configuration file
+			/// </summary>
+			unique_ptr<Config> config = nullptr;
 	};
 }
