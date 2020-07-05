@@ -318,3 +318,9 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+# Project specific
+!**/[Pp]ackages/fmt*/
+**/[Pp]ackages/fmt*/*
+!**/[Pp]ackages/fmt*/build/
+!**/[Pp]ackages/fmt*/build/fmt.targets

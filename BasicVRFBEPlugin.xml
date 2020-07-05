@@ -31,7 +31,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/debug/BasicVRFBEPlugind.dll</second>
+											<second>../plugins64/debug/BasicVRFBEDISPlugind.dll</second>
 										</item>
 									</second>
 								</item>
@@ -46,7 +46,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/debug/BasicVRFBEPlugind.dll</second>
+											<second>../plugins64/debug/BasicVRFBEHLA13Plugind.dll</second>
 										</item>
 									</second>
 								</item>
@@ -61,7 +61,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/debug/BasicVRFBEPlugind.dll</second>
+											<second>../plugins64/debug/BasicVRFBEHLA1516Plugind.dll</second>
 										</item>
 									</second>
 								</item>
@@ -76,7 +76,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/debug/BasicVRFBEPlugind.dll</second>
+											<second>../plugins64/debug/BasicVRFBEHLA1516ePlugind.dll</second>
 										</item>
 									</second>
 								</item>
@@ -98,7 +98,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/release/BasicVRFBEPlugin.dll</second>
+											<second>../plugins64/release/BasicVRFBEDISPlugin.dll</second>
 										</item>
 									</second>
 								</item>
@@ -113,7 +113,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/release/BasicVRFBEPlugin.dll</second>
+											<second>../plugins64/release/BasicVRFBEHLA13Plugin.dll</second>
 										</item>
 									</second>
 								</item>
@@ -128,7 +128,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/release/BasicVRFBEPlugin.dll</second>
+											<second>../plugins64/release/BasicVRFBEHLA1516Plugin.dll</second>
 										</item>
 									</second>
 								</item>
@@ -143,7 +143,7 @@
 										</item>
 										<item>
 											<first>plugin</first>
-											<second>../plugins64/release/BasicVRFBEPlugin.dll</second>
+											<second>../plugins64/release/BasicVRFBEHLA1516ePlugin.dll</second>
 										</item>
 									</second>
 								</item>

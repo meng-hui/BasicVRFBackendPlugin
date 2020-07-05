@@ -18,8 +18,29 @@ namespace BasicVRFBEPlugin
     /// <returns></returns>
 	Config::Config()
 	{
+        string simulationProtocol = "";
+        string plugin = "Plugin";
+#ifdef DIS
+        simulationProtocol = "DIS";
+#endif
+#ifdef HLA13
+        simulationProtocol = "HLA13";
+#endif
+#ifdef HLA1516
+        simulationProtocol = "HLA1516";
+#endif
+#ifdef HLA1516e
+        simulationProtocol = "HLA1516e";
+#endif
+
+#ifndef NDEBUG
+        plugin = "Plugind";
+#endif
+
+        string dllName = "BasicVRFBE"s + simulationProtocol + plugin + ".dll"s;
+
         char dllPath[2048];
-        GetModuleFileNameA(GetModuleHandle("BasicVRFBEPlugin.dll"), dllPath, 2048);
+        GetModuleFileNameA(GetModuleHandle(dllName.c_str()), dllPath, 2048);
         path p(dllPath);
         string jsonPath = p.parent_path().string() + '/' + p.stem().generic_string() + ".json";
 
