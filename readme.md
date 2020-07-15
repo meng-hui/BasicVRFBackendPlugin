@@ -38,7 +38,7 @@
   
 ## Development environment
 - Visual Studio 2019
-  - Configuration Properties (RelWithDebInfo)
+  - Configuration Properties (All Configurations)
     - Windows SDK Version: 10.0.18362.0
     - Platform Toolset: Visual Studio 2017 (v141)
 
@@ -62,9 +62,11 @@
   - Equivalent to VRF's RelWithDebInfo
   - To build to VRF's Release's specifications:
     - `Configuration Properties > C/C++ > General > Debug Information Format: Program Database (/Zi)`
+    - `Configuration Properties > C/C++ > General > Multi-processor Compilation: <blank>`    
     - `Configuration Properties > Linker > Debugging > Generate Debug Info: No`
   - To build to VRF's MinSizeRelease's specifications:
     - `Configuration Properties > C/C++ > General > Debug Information Format: <blank>`
+    - `Configuration Properties > C/C++ > General > Multi-processor Compilation: <blank>`    
     - `Configuration Properties > C/C++ > Optimization > Optimization: Maximum Optimization (Favor Size) (/O1)`
     - `Configuration Properties > Linker > General > Enable Incremental Linking: No (/INCREMENTAL:NO)`
     - `Configuration Properties > Linker > Debugging > Generate Debug Info: No`
