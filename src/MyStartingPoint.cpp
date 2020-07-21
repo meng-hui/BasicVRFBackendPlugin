@@ -38,9 +38,9 @@ namespace BasicVRFBEPlugin
     /// </summary>
     void MyStartingPoint::AddCallbacks()
     {
-        cgf->addPostLoadScenarioCallback(&MyStartingPoint::PostLoadScenarioCallback, this);
-        cgf->addPreCloseScenarioCallback(&MyStartingPoint::PreCloseScenarioCallback, this);
-        cgf->addPostTickCallback(&MyStartingPoint::PostTickCallback, this);
+        cgf->addPostLoadScenarioCallback(PostLoadScenarioCallback, this);
+        cgf->addPreCloseScenarioCallback(PreCloseScenarioCallback, this);
+        cgf->addPostTickCallback(PostTickCallback, this);
     }
 
     /// <summary>
@@ -48,16 +48,16 @@ namespace BasicVRFBEPlugin
     /// </summary>
     void MyStartingPoint::RemoveCallbacks()
     {
-        cgf->removePostTickCallback(&MyStartingPoint::PostTickCallback, this);
-        cgf->removePreCloseScenarioCallback(&MyStartingPoint::PreCloseScenarioCallback, this);
-        cgf->removePostLoadScenarioCallback(&MyStartingPoint::PostLoadScenarioCallback, this);
+        cgf->removePostTickCallback(PostTickCallback, this);
+        cgf->removePreCloseScenarioCallback(PreCloseScenarioCallback, this);
+        cgf->removePostLoadScenarioCallback(PostLoadScenarioCallback, this);
     }
 
     /// <summary>
     /// This callback is triggered after scenario is loaded
     /// </summary>
     /// <param name="scenario">Scenario information</param>
-    /// <param name="usr">Commander instance</param>
+    /// <param name="usr">Object that was passed in</param>
     void MyStartingPoint::PostLoadScenario(const DtScenario& scenario, void* usr)
     {
         print("[{}]\n", __FUNCTION__);
@@ -66,12 +66,16 @@ namespace BasicVRFBEPlugin
     /// <summary>
     /// This callback is triggered before a scenario is closed
     /// </summary>
-    /// <param name="usr">Commander instance</param>
+    /// <param name="usr">Object that was passed in</param>
     void MyStartingPoint::PreCloseScenario(void* usr)
     {
         print("[{}]\n", __FUNCTION__);
     }
 
+    /// <summary>
+    /// This callback is triggered every VRF update
+    /// </summary>
+    /// <param name="usr">Object that was passed in</param>
     void MyStartingPoint::PostTick(void* usr)
     {
         if (!config.get()->settings.get()->isEnablePostTickLogic)

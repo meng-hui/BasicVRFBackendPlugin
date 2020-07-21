@@ -39,7 +39,7 @@ namespace BasicVRFBEPlugin
 			/// Functor workaround
 			/// </summary>
 			/// <param name="scenario">Scenario information</param>
-			/// <param name="usr">Commander instance</param>
+			/// <param name="usr">Object that was passed in</param>
 			static void PostLoadScenarioCallback(const DtScenario& scenario, void* usr)
 			{
 				MyStartingPoint* myStartingPoint = static_cast<MyStartingPoint*>(usr);
@@ -50,13 +50,13 @@ namespace BasicVRFBEPlugin
 			/// This callback is triggered after scenario is loaded
 			/// </summary>
 			/// <param name="scenario">Scenario information</param>
-			/// <param name="usr">Commander instance</param>
+			/// <param name="usr">Object that was passed in</param>
 			void PostLoadScenario(const DtScenario& scenario, void* usr);
 
 			/// <summary>
 			/// This callback is triggered before a scenario is closed
 			/// </summary>
-			/// <param name="usr">Commander instance</param>
+			/// <param name="usr">Object that was passed in</param>
 			static void PreCloseScenarioCallback(void* usr)
 			{
 				MyStartingPoint* myStartingPoint = static_cast<MyStartingPoint*>(usr);
@@ -66,14 +66,14 @@ namespace BasicVRFBEPlugin
 			/// <summary>
 			/// This callback is triggered before a scenario is closed
 			/// </summary>
-			/// <param name="usr">Commander instance</param>
+			/// <param name="usr">Object that was passed in</param>
 			void PreCloseScenario(void* usr);
 
 			/// <summary>
 			/// This callback is triggered every VRF update
 			/// Functor workaround
 			/// </summary>
-			/// <param name="usr">Commander instance</param>
+			/// <param name="usr">Object that was passed in</param>
 			static void PostTickCallback(void* usr)
 			{
 				MyStartingPoint* myStartingPoint = static_cast<MyStartingPoint*>(usr);
@@ -83,7 +83,7 @@ namespace BasicVRFBEPlugin
 			/// <summary>
 			/// This callback is triggered every VRF update
 			/// </summary>
-			/// <param name="usr">Commander instance</param>
+			/// <param name="usr">Object that was passed in</param>
 			void PostTick(void* usr);
 
 			/// <summary>
