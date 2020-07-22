@@ -5,7 +5,12 @@
     <SimulationProtocol>HLA1516</SimulationProtocol>
   </PropertyGroup>
   <PropertyGroup />
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>DtHLA=1;DtHLA_1516=1;RTI_USES_STD_FSTREAM=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MAK_RTIDIR)/include/HLA1516;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="SimulationProtocol">
       <Value>$(SimulationProtocol)</Value>

@@ -5,7 +5,11 @@
     <SimulationProtocol>DIS</SimulationProtocol>
   </PropertyGroup>
   <PropertyGroup />
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>DtDIS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="SimulationProtocol">
       <Value>$(SimulationProtocol)</Value>

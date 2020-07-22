@@ -18,19 +18,17 @@ namespace BasicVRFBEPlugin
     /// <returns></returns>
 	Config::Config()
 	{
-        string simulationProtocol = "";
+        string simulationProtocol = "DIS";
         string plugin = "Plugin";
-#ifdef DIS
+
+#ifdef DtDIS
         simulationProtocol = "DIS";
-#endif
-#ifdef HLA13
-        simulationProtocol = "HLA13";
-#endif
-#ifdef HLA1516
-        simulationProtocol = "HLA1516";
-#endif
-#ifdef HLA1516e
+#elif DtHLA_1516_EVOLVED
         simulationProtocol = "HLA1516e";
+#elif DtHLA_1516
+        simulationProtocol = "HLA1516";
+#elif DtHLA
+        simulationProtocol = "HLA13";
 #endif
 
 #ifndef NDEBUG
