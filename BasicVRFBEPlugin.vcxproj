@@ -232,7 +232,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb_debug.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -284,7 +284,7 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb_debug.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -336,7 +336,7 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb_debug.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -388,7 +388,7 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb_debug.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -439,7 +439,7 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -489,7 +489,7 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -539,7 +539,7 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -589,7 +589,7 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vl$(DLLSuffix).lib;vl$(SimulationProtocol)$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;vrfcgf$(SimulationProtocol)$(DLLSuffix).lib;vrfExtProtocol$(DLLSuffix).lib;vrfmodel$(SimulationProtocol)$(DLLSuffix).lib;vrfobjcore$(SimulationProtocol)$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;tdbutil$(DLLSuffix).lib;tbb.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
