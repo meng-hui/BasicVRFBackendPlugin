@@ -77,7 +77,7 @@
 | Package  | Version  | Purpose  | Nuget Uri  | Comments  |
 |---|---|---|---|---|
 | nlohmann.json  | 3.9.1  | JSON SerDes  | https://www.nuget.org/packages/nlohmann.json/  | https://github.com/nlohmann/json  |
-| fmt  | 6.2.1  | Formatting library  | https://www.nuget.org/packages/fmt/  | https://fmt.dev/  |
+| fmt  | 7.0.1  | Formatting library  | https://www.nuget.org/packages/fmt/  | https://fmt.dev/  |
 
 ## Environment Variables
 Add all the below variables into system's environment variables (can also be added as user level environment variables)

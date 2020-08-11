@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='DebugDIS' Or '$(Configuration)'=='DebugHLA13' Or '$(Configuration)'=='DebugHLA1516' Or '$(Configuration)'=='DebugHLA1516e'">
+    <Link>
+      <AdditionalDependencies>fmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+	<Lib>
+      <AdditionalDependencies>fmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release' Or '$(Configuration)'=='ReleaseDIS' Or '$(Configuration)'=='ReleaseHLA13' Or '$(Configuration)'=='ReleaseHLA1516' Or '$(Configuration)'=='ReleaseHLA1516e'">
+    <Link>
+      <AdditionalDependencies>fmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+   <Lib>
+      <AdditionalDependencies>fmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\lib\native\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+	<Lib>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\lib\native\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x86' Or '$(Platform)'=='Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\lib\native\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+	<Lib>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\lib\native\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+   </ItemDefinitionGroup>   
+</Project>
