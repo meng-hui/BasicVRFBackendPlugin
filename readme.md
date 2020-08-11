@@ -76,7 +76,7 @@
 ## Nuget packages
 | Package  | Version  | Purpose  | Nuget Uri  | Comments  |
 |---|---|---|---|---|
-| nlohmann.json  | 3.7.3  | JSON SerDes  | https://www.nuget.org/packages/nlohmann.json/  | https://github.com/nlohmann/json  |
+| nlohmann.json  | 3.9.1  | JSON SerDes  | https://www.nuget.org/packages/nlohmann.json/  | https://github.com/nlohmann/json  |
 | fmt  | 6.2.1  | Formatting library  | https://www.nuget.org/packages/fmt/  | https://fmt.dev/  |
 
 ## Environment Variables
@@ -99,4 +99,4 @@ Parameters for the application can be changed via an external configuration file
 | IsEnablePostTickLogic  | Boolean  | true or false  | Enable/disable code in PostTick  |
 
 ## Notes
-- Due to how the individual build configurations are structured in the solution (DebugDIS, DebugHLA13, DebugHLA1516, DebugHLA1516e, ReleaseDIS, ReleaseHLA13, Release1516 and Release1516e instead of just Debug and Release), nuget plugins that targets Debug and Release will fail to work. The plugin's `targets` file must be modified to support the different configurations. In this case, the modified file(s) must be committed to git as well 
+- Due to how the individual build configurations are structured in the solution (DebugDIS, DebugHLA13, DebugHLA1516, DebugHLA1516e, ReleaseDIS, ReleaseHLA13, Release1516 and Release1516e instead of just Debug and Release), nuget plugins that target Debug and/or Release will fail to work. The plugin's `targets` file must be modified to support the different configurations. In this case, the modified file(s) must be committed to git as well 
