@@ -1,10 +1,5 @@
 #include "MyStartingPoint.h"
 
-#include <boost/filesystem.hpp>
-#include <nlohmann/json.hpp>
-
-using json = nlohmann::json;
-
 namespace BasicVRFBEPlugin
 {
     /// <summary>
