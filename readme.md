@@ -15,16 +15,19 @@
 - [Folder structure](#folder-structure)
 - [VS Build Configurations](#vs-build-configurations)
 - [Nuget packages](#nuget-packages)
+- [vcpkg packages](#vcpkg-packages)
 - [Environment Variables](#environment-variables)
 - [Configuration file](#configuration-file)
+- [Logging](#logging)
 - [Notes](#notes)
 
 ## Quick start
 1) git clone
-2) Set environment variables (refer to `Environment Variables`)
-3) Open solution
-4) Build > Batch Build. Enable all configurations. Click "Build"
-5) Plugin is now inside VRF's plugin folder. Plugin's XML is in VRF's appData\plugins folder
+2) Setup development environment with `vcpkg`
+3) Set environment variables (refer to `Environment Variables`)
+4) Open solution
+5) Build > Batch Build. Enable all configurations. Click "Build"
+6) Plugin is now inside VRF's plugin folder. Plugin's XML is in VRF's appData\plugins folder
 
 ## Essential software
 - Visual Studio 2019
@@ -32,15 +35,28 @@
     - Desktop development with C++
   - Individual components
     - MSVC V141 - VS 2017 C++ x64/x86 build tools (v14.16)
-- MAK VR-Forces 4.7
-- MAK VR-Link 5.4.1
-- MAK RTI 4.5
+
+Tested Configurations
+| MAK VR-Forces | MAK VR-Link | MAK RTI |
+|---|---|---|
+| 4.7 | 5.4.1 | 4.5 |
+| 4.8 | 5.5 | 4.5.1 |
   
 ## Development environment
 - Visual Studio 2019
   - Configuration Properties (All Configurations)
     - Windows SDK Version: 10.0.18362.0
     - Platform Toolset: Visual Studio 2017 (v141)
+- Install [vcpkg](https://github.com/microsoft/vcpkg)
+```
+> git clone https://github.com/microsoft/vcpkg
+> .\vcpkg\bootstrap-vcpkg.bat
+> .\vcpkg\vcpkg integrate install # with elevated permissions
+> .\vcpkg\vcpkg install spdlog:x64-windows
+```
+- Install `spdlog`
+  - Either add `<vcpkg folder>\installed\x64-windows\bin` to your `PATH`
+  - Or copy `fmt.dll` and `spdlog.dll` to `<VR Forces folder>\bin64`
 
 ## Folder structure
 ```sh
@@ -77,7 +93,12 @@
 | Package  | Version  | Purpose  | Nuget Uri  | Comments  |
 |---|---|---|---|---|
 | nlohmann.json  | 3.9.1  | JSON SerDes  | https://www.nuget.org/packages/nlohmann.json/  | https://github.com/nlohmann/json  |
-| fmt  | 7.0.1  | Formatting library  | https://www.nuget.org/packages/fmt/  | https://fmt.dev/  |
+
+## vcpkg packages
+| Package  | Version  | Purpose  |
+|---|---|---|
+| spdlog | 1.8.0#2 | Logging |
+| fmt | bundled with spdlog | String formatting |
 
 ## Environment Variables
 Add all the below variables into system's environment variables (can also be added as user level environment variables)
@@ -97,6 +118,9 @@ Parameters for the application can be changed via an external configuration file
 | IsEnable  | Boolean  | true or false  | Enable/disable plugin  |
 | IsEnableDebugPrint  | Boolean  | true or false  | Enable/disable debug console print-out  |
 | IsEnablePostTickLogic  | Boolean  | true or false  | Enable/disable code in PostTick  |
+
+## Logging
+This basic plugin includes `spdlog` and it's bundled `fmt`. Trace logs and above are written to `<VR Forces folder>\bin64\logs\mylog.txt` and warnings and above are written to console. Configure spdlog in `Config.cpp` 
 
 ## Notes
 - Due to how the individual build configurations are structured in the solution (DebugDIS, DebugHLA13, DebugHLA1516, DebugHLA1516e, ReleaseDIS, ReleaseHLA13, Release1516 and Release1516e instead of just Debug and Release), nuget plugins that target Debug and/or Release will fail to work. The plugin's `targets` file must be modified to support the different configurations. In this case, the modified file(s) must be committed to git as well 
