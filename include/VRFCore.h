@@ -2,7 +2,8 @@
 
 #include <vrfcgf/cgf.h>
 
-#include <fmt/core.h>
+#include <spdlog/spdlog.h>
+#include <spdlog/fmt/fmt.h>
 
 using namespace fmt;
 

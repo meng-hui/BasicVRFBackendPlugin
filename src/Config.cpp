@@ -18,6 +18,24 @@ namespace BasicVRFBEPlugin
     /// <returns></returns>
 	Config::Config()
 	{
+        // configure logging
+        auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
+        console_sink->set_level(spdlog::level::warn);
+
+        // 10MB log, 3 rotating files
+        auto rotating_file_sink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>("logs/myLog.txt", 1024 * 1024 * 10, 3);
+        rotating_file_sink->set_level(spdlog::level::trace);
+
+        // configure default logger
+        std::shared_ptr<spdlog::logger> logger(new spdlog::logger("logger", { console_sink, rotating_file_sink }));
+        spdlog::register_logger(logger);
+        spdlog::set_default_logger(logger);
+
+        spdlog::flush_every(std::chrono::seconds(3));
+        // change log pattern
+        spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%^%l%$] [thread %t] %v");
+
+        // configure config file
         string simulationProtocol = "DIS";
         string plugin = "Plugin";
 
@@ -44,7 +62,7 @@ namespace BasicVRFBEPlugin
 
         if (!exists(jsonPath))
         {
-            print("[{}] No config file found. Creating default config file at {}\n", __FUNCTION__, jsonPath);
+            spdlog::info("[{}] No config file found. Creating default config file at {}\n", __FUNCTION__, jsonPath);
 
             //create default settings
             settings = make_unique<Settings>();
@@ -57,7 +75,7 @@ namespace BasicVRFBEPlugin
         }
         else
         {
-            print("[{}] Config file found at {}\n", __FUNCTION__, jsonPath);
+            spdlog::info("[{}] Config file found at {}\n", __FUNCTION__, jsonPath);
 
             //read config
             ReadConfig(jsonPath);
