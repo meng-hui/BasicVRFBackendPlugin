@@ -1,0 +1,17 @@
+{
+  "name": "basic-vrfbe",
+  "version": "1.0.0",
+  "dependencies": [
+    {
+      "name": "spdlog",
+      "version>=": "1.8.5#2",
+      "platform" : "windows & x64 & !static"
+    },
+    {
+      "name": "nlohmann-json",
+      "version>=": "3.9.1",
+      "platform" : "windows & x64 & !static"
+    }
+  ],
+  "builtin-baseline": "7d472dd25830da92108eb76642c667aaa40512cb"
+}

@@ -319,6 +319,9 @@ ASALocalRun/
 # MSBuild Binary and Structured Log
 *.binlog
 
+# vcpkg manifest
+vcpkg_installed/
+
 # Project specific
 !**/[Pp]ackages/fmt*/
 **/[Pp]ackages/fmt*/*

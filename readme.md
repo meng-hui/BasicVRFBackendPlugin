@@ -14,12 +14,10 @@
 - [Development environment](#development-environment)
 - [Folder structure](#folder-structure)
 - [VS Build Configurations](#vs-build-configurations)
-- [Nuget packages](#nuget-packages)
 - [vcpkg packages](#vcpkg-packages)
 - [Environment Variables](#environment-variables)
 - [Configuration file](#configuration-file)
 - [Logging](#logging)
-- [Notes](#notes)
 
 ## Quick start
 1) git clone
@@ -51,26 +49,28 @@ Tested Configurations
 ```
 > git clone https://github.com/microsoft/vcpkg
 > .\vcpkg\bootstrap-vcpkg.bat
+> .\vcpkg\vcpkg --feature-flags=versions install # Install versioning feature of vcpkg
 > .\vcpkg\vcpkg integrate install # with elevated permissions
-> .\vcpkg\vcpkg install spdlog:x64-windows
 ```
-- Install `spdlog`
-  - Either add `<vcpkg folder>\installed\x64-windows\bin` to your `PATH`
-  - Or copy `fmt.dll` and `spdlog.dll` to `<VR Forces folder>\bin64`
+- Edit `vcpkg folder/triplets/x64-windows.cmake` to include 
+  - `set(VCPKG_PLATFORM_TOOLSET "v141")`
+  - `set(VCPKG_DEP_INFO_OVERRIDE_VARS "v141")`
+
+- Add `your project folder\vcpkg_installed\x64-windows\bin` to your `PATH`
 
 ## Folder structure
 ```sh
 ├── [build] (intermediate and output directory)
 ├── [include]
-├── [packages] (nuget packages)
 ├── [src]
 ├── .gitattributes
 ├── .gitignore
 ├── readme.md
 ├── solution.sln
-├── packages.config
 ├── plugin.xml
-└── project.vcxproj
+├── project.vcxproj
+├── vcpkg.json
+└── vcpkg_installed
 ```
 
 ## VS Build Configurations
@@ -89,16 +89,12 @@ Tested Configurations
 - **DebugDIS, DebugHLA13, DebugHLA1516, DebugHLA1516e**
   - Equivalent to VRF's Debug
 
-## Nuget packages
-| Package  | Version  | Purpose  | Nuget Uri  | Comments  |
-|---|---|---|---|---|
-| nlohmann.json  | 3.9.1  | JSON SerDes  | https://www.nuget.org/packages/nlohmann.json/  | https://github.com/nlohmann/json  |
-
 ## vcpkg packages
 | Package  | Version  | Purpose  |
 |---|---|---|
-| spdlog | 1.8.0#2 | Logging |
+| spdlog | 1.8.5#2 | Logging |
 | fmt | bundled with spdlog | String formatting |
+| nlohmann-json | 3.9.1 | JSON SerDes |
 
 ## Environment Variables
 Add all the below variables into system's environment variables (can also be added as user level environment variables)
@@ -121,6 +117,3 @@ Parameters for the application can be changed via an external configuration file
 
 ## Logging
 This basic plugin includes `spdlog` and it's bundled `fmt`. Trace logs and above are written to `<VR Forces folder>\bin64\logs\mylog.txt` and warnings and above are written to console. Configure spdlog in `Config.cpp` 
-
-## Notes
-- Due to how the individual build configurations are structured in the solution (DebugDIS, DebugHLA13, DebugHLA1516, DebugHLA1516e, ReleaseDIS, ReleaseHLA13, Release1516 and Release1516e instead of just Debug and Release), nuget plugins that target Debug and/or Release will fail to work. The plugin's `targets` file must be modified to support the different configurations. In this case, the modified file(s) must be committed to git as well 

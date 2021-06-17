@@ -90,135 +90,62 @@
     <Import Project="$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
+    <Import Project="PropertiesRelease.props" />
     <Import Project="PropertiesDIS.props" />
     <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesRelease.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">
-    <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesHLA1516.props" />
     <Import Project="PropertiesRelease.props" />
+    <Import Project="PropertiesHLA1516.props" />
+    <Import Project="CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">
-    <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesHLA13.props" />
     <Import Project="PropertiesRelease.props" />
+    <Import Project="PropertiesHLA13.props" />
+    <Import Project="CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'" Label="PropertySheets">
-    <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesHLA1516e.props" />
     <Import Project="PropertiesDebug.props" />
+    <Import Project="PropertiesHLA1516e.props" />
+    <Import Project="CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'" Label="PropertySheets">
-    <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesHLA1516.props" />
     <Import Project="PropertiesDebug.props" />
+    <Import Project="PropertiesHLA1516.props" />
+    <Import Project="CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'" Label="PropertySheets">
-    <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesHLA13.props" />
     <Import Project="PropertiesDebug.props" />
+    <Import Project="PropertiesHLA13.props" />
+    <Import Project="CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'" Label="PropertySheets">
-    <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesDIS.props" />
     <Import Project="PropertiesDebug.props" />
+    <Import Project="PropertiesDIS.props" />
+    <Import Project="CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">
-    <Import Project="CommonProperties.props" />
-    <Import Project="PropertiesHLA1516e.props" />
     <Import Project="PropertiesRelease.props" />
+    <Import Project="PropertiesHLA1516e.props" />
+    <Import Project="CommonProperties.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">.dll</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">true</LinkIncremental>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">true</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">true</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">true</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">build\$(Platform)\$(Configuration)\</IntDir>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">.dll</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">true</LinkIncremental>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">true</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">true</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">true</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugin</TargetName>
     <CustomBuildBeforeTargets>
     </CustomBuildBeforeTargets>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugind</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugind</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugind</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugind</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugin</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugin</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">
-    <TargetName>$(PluginName)$(SimulationProtocol)Plugin</TargetName>
-  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <Optimization>Disabled</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_DFD_SUPPORT;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Debug/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -232,45 +159,15 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(TargetDir)$(TargetName).pdb" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <Optimization>Disabled</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_DFD_SUPPORT;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Debug/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -284,45 +181,15 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(TargetDir)$(TargetName).pdb" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <Optimization>Disabled</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_DFD_SUPPORT;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Debug/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -336,45 +203,15 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(TargetDir)$(TargetName).pdb" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <Optimization>Disabled</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_DFD_SUPPORT;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Debug/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -388,44 +225,15 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(TargetDir)$(TargetName).pdb" "$(MAK_VRFDIR)/plugins64/debug"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <Optimization>MaxSpeed</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NDEBUG;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Release/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -439,43 +247,15 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/release"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <Optimization>MaxSpeed</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NDEBUG;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Release/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -489,43 +269,15 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/release"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <Optimization>MaxSpeed</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NDEBUG;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Release/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -539,43 +291,15 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/release"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>./include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AssemblerListingLocation>$(ConfigurationName)/</AssemblerListingLocation>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <Optimization>MaxSpeed</Optimization>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
+    <ClCompile />
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NDEBUG;DtDIS=1;NOMINMAX;BOOST_NO_RVALUE_REFERENCES;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_FILESYSTEM_VERSION=2;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;CMAKE_INTDIR=/"Release/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -589,23 +313,12 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ProgramDataBaseFile>build/$(Platform)/$(Configuration)/$(ProjectName).pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
       <Version>
       </Version>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(TargetPath)" "$(MAK_VRFDIR)/plugins64/release"
-xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</Command>
-    </PostBuildEvent>
+    <ProjectReference />
+    <PostBuildEvent />
     <PreBuildEvent>
       <Command>
       </Command>
@@ -617,7 +330,8 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
       </Command>
     </PreLinkEvent>
     <CustomBuildStep>
-      <Command>xcopy /y "$(ProjectDir)fmt.targets" "$(ProjectDir)packages/fmt.6.1.2/build/fmt.targets"</Command>
+      <Command>
+      </Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -633,17 +347,6 @@ xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"</C
     <ClCompile Include="src\plugin.cxx" />
     <ClCompile Include="src\VRFCore.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)/Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets" Condition="Exists('packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets'))" />
-  </Target>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
