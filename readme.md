@@ -33,6 +33,7 @@
     - Desktop development with C++
   - Individual components
     - MSVC V141 - VS 2017 C++ x64/x86 build tools (v14.16)
+    - MSVC V142 - VS 2019 C++ x64/x86 build tools (Latest). This is used by vcpkg
 
 Tested Configurations
 | MAK VR-Forces | MAK VR-Link | MAK RTI |
