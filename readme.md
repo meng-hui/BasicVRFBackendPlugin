@@ -59,6 +59,10 @@ Tested Configurations
 
 - Add `your project folder\vcpkg_installed\x64-windows\bin` to your `PATH`
 
+- Optional: Add `your project folder\vcpkg_installed` folder as an exception for your antivirus
+  - Some packages, e.g., Boost `b2.exe` is treated as a virus (https://github.com/microsoft/vcpkg/issues/13353)
+  - Start > Settings > Update & Security > Windows Security > Virus & threat protection. Under Virus & threat protection settings, select Manage settings, and then under Exclusions, select Add or remove exclusions. Add your vcpkg_installed folder path.
+
 ## Folder structure
 ```sh
 ├── [build] (intermediate and output directory)
