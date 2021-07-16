@@ -27,7 +27,8 @@ namespace BasicVRFBEPlugin
         rotating_file_sink->set_level(spdlog::level::trace);
 
         // configure default logger
-        std::shared_ptr<spdlog::logger> logger(new spdlog::logger("logger", { console_sink, rotating_file_sink }));
+        spdlog::sinks_init_list sinks = { console_sink, rotating_file_sink };
+        auto logger = std::make_shared<spdlog::logger>("logger", sinks);
         spdlog::register_logger(logger);
         spdlog::set_default_logger(logger);
 
