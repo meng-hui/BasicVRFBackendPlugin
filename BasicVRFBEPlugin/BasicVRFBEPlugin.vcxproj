@@ -148,36 +148,78 @@
     <ClCompile />
     <ProjectReference />
     <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">
     <ClCompile />
     <ProjectReference />
     <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">
     <ClCompile />
     <ProjectReference />
     <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">
     <ClCompile />
     <ProjectReference />
     <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">
     <ClCompile />
     <ProjectReference />
     <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">
     <ClCompile />
     <ProjectReference />
     <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">
     <ClCompile />
     <ProjectReference />
     <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
     <ClCompile />
@@ -197,19 +239,58 @@
       <Command>
       </Command>
     </CustomBuildStep>
+    <ClCompile>
+      <AdditionalIncludeDirectories>generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>vrfobjcore.lib;vrfplan.lib;vrftasks.lib;vl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\CgfHelper.h" />
     <ClInclude Include="include\Config.h" />
     <ClInclude Include="include\Data\Settings.h" />
     <ClInclude Include="include\MyStartingPoint.h" />
     <ClInclude Include="include\plugin.h" />
+    <ClInclude Include="include\ServerImpl.h" />
     <ClInclude Include="include\VRFCore.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\CgfHelper.cpp" />
     <ClCompile Include="src\Config.cpp" />
     <ClCompile Include="src\MyStartingPoint.cpp" />
     <ClCompile Include="src\plugin.cxx" />
+    <ClCompile Include="src\ServerImpl.cpp" />
     <ClCompile Include="src\VRFCore.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\protos\dt_cgf.proto">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">ClCompile</OutputItemType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">ClCompile</OutputItemType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">ClCompile</OutputItemType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">ClCompile</OutputItemType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">ClCompile</OutputItemType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">ClCompile</OutputItemType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">ClCompile</OutputItemType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\protobuf\protoc.exe --proto_path=$(SolutionDir)protos --cpp_out=$(ProjectDir)generated --grpc_out=$(ProjectDir)generated --plugin=protoc-gen-grpc=$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\tools\grpc\grpc_cpp_plugin.exe %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">$(ProjectDir)generated\%(Filename).grpc.pb.cc;$(ProjectDir)generated\%(Filename).pb.cc;%(Outputs)</Outputs>
+      <OutputItemType Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">ClCompile</OutputItemType>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)/Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

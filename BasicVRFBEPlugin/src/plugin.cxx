@@ -29,6 +29,9 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
         fmt::print("[{}] Plugin disabled\n", __FUNCTION__);
     }
 
+    g_grpc_server = std::make_unique<ServerImpl>(std::make_unique<VRFServerPlugin::CgfHelper>(*cgf));
+    g_grpc_server->Run(50051u);
+
     return true;
 }
 
@@ -42,6 +45,7 @@ bool DtPostInitializeVrfPlugin(DtCgf* cgf)
 void DtUnloadVrfPlugin()
 {
     fmt::print("[{}]\n", __FUNCTION__);
-
+    g_grpc_server->Shutdown();
+    g_grpc_server.reset();
     myStartingPoint.reset();
 }

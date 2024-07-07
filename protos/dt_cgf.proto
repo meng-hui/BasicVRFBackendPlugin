@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package VRFServerPlugin;
+
+enum DtForceType {
+	DtForceOther = 0;
+	DtForceFriendly = 1;
+	DtForceOpposing = 2;
+	DtForceNeutral = 3;
+}
+
+message SimObject {
+	string name = 1;
+	string entity_type = 2;
+	DtForceType force_type = 3;
+}
+
+message ListSimObjectsResponse {
+	repeated SimObject sim_objects = 1;
+}
+
+message Plan {
+    string name = 1;
+    repeated Statement statements = 2;
+}
+
+message Statement {
+    oneof statement_type {
+        Task task = 1;
+        SetRequest set_request = 2;
+        IfStatement if_statement = 3;
+        WhileStatement while_statement = 4;
+        TriggerStatement trigger_statement = 5;
+    }
+}
+
+message Task {
+    oneof task_type {
+        FireAtTarget fire_at_target = 1;
+        MoveAlongRoute move_along_route = 2;
+        MoveToLocation move_to_location = 3;
+        PatrolRoute patrol_route = 4;
+        PatrolWaypoints patrol_waypoints = 5;
+        WaitDuration wait_duration = 6;
+    }
+}
+
+message FireAtTarget {
+    string entity_name = 1;
+}
+
+message MoveAlongRoute {
+    string entity_name = 1;
+}
+
+message MoveToLocation {
+    string entity_name = 1;
+}
+
+message PatrolRoute {
+    string entity_name = 1;
+}
+
+message PatrolWaypoints {
+    string entity_name_1 = 1;
+    string entity_name_2 = 2;
+}
+
+message WaitDuration {
+    int32 duration_seconds = 1;
+}
+
+message SetRequest {
+    oneof set_request_type {
+        SetOrderedSpeed set_ordered_speed = 1;
+        SetRulesOfEngagement set_rules_of_engagement = 2;
+    }
+}
+
+message SetOrderedSpeed {
+    double speed = 1;
+}
+
+enum RulesOfEngagementType {
+	FireAtWill = 0;
+	FireWhenFiredUpon = 1;
+	HoldFire = 2;
+}
+
+message SetRulesOfEngagement {
+    RulesOfEngagementType type = 1;
+}
+
+message IfStatement {
+    Condition condition = 1;
+    repeated Statement then_statements = 2;
+    repeated Statement else_statements = 3;
+}
+
+message WhileStatement {
+    Condition condition = 1;
+    repeated Statement statements = 2;
+}
+
+message TriggerStatement {
+    Condition condition = 1;
+    string description = 2;
+    repeated Statement statements = 3;
+}
+
+message Condition {
+    oneof condition_type {
+        EntityInArea entity_in_area = 1;
+        EntityUnderFire entity_under_fire = 2;
+        AndCondition and_condition = 3;
+        OrCondition or_condition = 4;
+    }
+}
+
+message EntityInArea {
+    string entity_name = 1;
+    string area_name = 2;
+}
+
+message EntityUnderFire {
+    string entity_name = 1;
+}
+
+message AndCondition {
+    repeated Condition conditions = 1;
+}
+
+message OrCondition {
+    repeated Condition conditions = 1;
+}
+
+message PlanAssignmentRequest {
+    string entity_id = 1;
+    Plan plan = 2;
+}
+
+message PlanAssignmentResponse {
+    bool success = 1;
+}
+
+
+service CgfService {
+	rpc ListSimObjects(google.protobuf.Empty) returns (ListSimObjectsResponse);
+    rpc AssignPlan(PlanAssignmentRequest) returns (PlanAssignmentResponse);
+}

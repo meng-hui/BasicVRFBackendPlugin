@@ -6,6 +6,7 @@
 
 #include <memory>
 #include <vrfcgf/vrfPluginExtension.h>				//mandatory VRF plugin callbacks
+#include <ServerImpl.h>
 
 #ifdef EXPORT_FUNCTIONS
 #define DLL_EXPORT __declspec(dllexport)
@@ -48,3 +49,4 @@ NO_NAME_MANGLING DT_VRF_DLL_PLUGIN void DtUnloadVrfPlugin();
 NO_NAME_MANGLING DT_VRF_DLL_PLUGIN void DtPluginInformation(DtVrfPluginInformation& info);
 
 std::unique_ptr<BasicVRFBEPlugin::MyStartingPoint> myStartingPoint = nullptr;
+std::unique_ptr<ServerImpl> g_grpc_server = nullptr;

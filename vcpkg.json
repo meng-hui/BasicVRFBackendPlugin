@@ -4,18 +4,36 @@
   "version": "1.0.0",
   "builtin-baseline": "9765877106f7c179995e8010bb7427a865a6bd1d",
   "dependencies": [ 
+    "abseil", 
+    "grpc",
     "nlohmann-json", 
+    "re2",
     "spdlog" 
   ],
   "overrides": [
-    {
-      "name": "spdlog",
-      "version": "1.13.0",
-      "port-version": 0
+    { 
+      "name": "abseil", 
+      "version": "20230125.3", 
+      "port-version": 1
+    },
+    { 
+      "name": "grpc", 
+      "version": "1.51.1", 
+      "port-version": 2
     },
     {
       "name": "nlohmann-json",
       "version": "3.11.3",
+      "port-version": 0
+    },
+    { 
+      "name": "re2", 
+      "version": "2023-02-01", 
+      "port-version": 0
+    },
+    {
+      "name": "spdlog",
+      "version": "1.13.0",
       "port-version": 0
     }
   ]

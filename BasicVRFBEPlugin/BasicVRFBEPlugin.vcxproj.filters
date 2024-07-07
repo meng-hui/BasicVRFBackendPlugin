@@ -10,6 +10,9 @@
     <Filter Include="include\Data">
       <UniqueIdentifier>{5b5c1be1-4c20-43f8-abed-691b26a8be46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="protos">
+      <UniqueIdentifier>{d33656e6-9b6a-4042-983f-f3bfac206b11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\plugin.h">
@@ -27,6 +30,12 @@
     <ClInclude Include="include\Data\Settings.h">
       <Filter>include\Data</Filter>
     </ClInclude>
+    <ClInclude Include="include\CgfHelper.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ServerImpl.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\plugin.cxx">
@@ -41,5 +50,16 @@
     <ClCompile Include="src\Config.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\CgfHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ServerImpl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\protos\dt_cgf.proto">
+      <Filter>protos</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>
