@@ -7,8 +7,6 @@
 #include <memory>
 #include <vrfcgf/vrfPluginExtension.h>				//mandatory VRF plugin callbacks
 
-using namespace BasicVRFBEPlugin;
-
 #ifdef EXPORT_FUNCTIONS
 #define DLL_EXPORT __declspec(dllexport)
 #else	
@@ -49,4 +47,4 @@ NO_NAME_MANGLING DT_VRF_DLL_PLUGIN void DtUnloadVrfPlugin();
 /// <param name="info">Information about this plugin</param>
 NO_NAME_MANGLING DT_VRF_DLL_PLUGIN void DtPluginInformation(DtVrfPluginInformation& info);
 
-std::unique_ptr<MyStartingPoint> myStartingPoint = nullptr;
+std::unique_ptr<BasicVRFBEPlugin::MyStartingPoint> myStartingPoint = nullptr;

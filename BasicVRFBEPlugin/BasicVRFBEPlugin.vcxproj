@@ -40,7 +40,7 @@
     <Platform>x64</Platform>
     <ProjectName>BasicVRFBEPlugin</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)/Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'" Label="Configuration">
@@ -90,44 +90,44 @@
     <Import Project="$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
-    <Import Project="PropertiesRelease.props" />
-    <Import Project="PropertiesDIS.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesDIS.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">
-    <Import Project="PropertiesRelease.props" />
-    <Import Project="PropertiesHLA1516.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">
-    <Import Project="PropertiesRelease.props" />
-    <Import Project="PropertiesHLA13.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA13.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'" Label="PropertySheets">
-    <Import Project="PropertiesDebug.props" />
-    <Import Project="PropertiesHLA1516e.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516e.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'" Label="PropertySheets">
-    <Import Project="PropertiesDebug.props" />
-    <Import Project="PropertiesHLA1516.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'" Label="PropertySheets">
-    <Import Project="PropertiesDebug.props" />
-    <Import Project="PropertiesHLA13.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA13.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'" Label="PropertySheets">
-    <Import Project="PropertiesDebug.props" />
-    <Import Project="PropertiesDIS.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesDIS.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">
-    <Import Project="PropertiesRelease.props" />
-    <Import Project="PropertiesHLA1516e.props" />
-    <Import Project="CommonProperties.props" />
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516e.props" />
+    <Import Project="$(SolutionDir)CommonProperties.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>

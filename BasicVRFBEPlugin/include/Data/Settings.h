@@ -2,22 +2,20 @@
 
 #include <nlohmann/json.hpp>
 
-using json = nlohmann::json;
-
 namespace BasicVRFBEPlugin
 {
 	namespace Data
 	{
-		class Settings
+		class Settings final
 		{
 			public:
 				bool isEnable = true;
 				bool isEnablePostTickLogic = true;
 				bool isEnableDebugPrint = false;
 
-				friend void to_json(json& j, const Settings& cs)
+				friend void to_json(nlohmann::json& j, const Settings& cs)
 				{
-					j = json
+					j = nlohmann::json
 					{
 						{ "IsEnable", cs.isEnable},
 						{ "IsEnablePostTickLogic", cs.isEnablePostTickLogic},
@@ -25,7 +23,7 @@ namespace BasicVRFBEPlugin
 					};
 				}
 
-				friend void from_json(const json& j, Settings& cs)
+				friend void from_json(const nlohmann::json& j, Settings& cs)
 				{
 					j.at("IsEnable").get_to(cs.isEnable);
 					j.at("IsEnablePostTickLogic").get_to(cs.isEnablePostTickLogic);

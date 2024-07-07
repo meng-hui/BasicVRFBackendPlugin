@@ -5,8 +5,6 @@
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/fmt.h>
 
-using namespace fmt;
-
 /// <summary>
 /// Essential VR-Force classes
 /// </summary>
@@ -21,7 +19,7 @@ namespace VRFCore
 	{
 		if (cgf == nullptr)
 		{
-			print("[ERROR] Attempt to use DtCgf when it is uninitialised\n");
+			fmt::print("[ERROR] Attempt to use DtCgf when it is uninitialised\n");
 		}
 
 		return cgf;
@@ -32,9 +30,9 @@ namespace VRFCore
 	/// It's just like a Yellow Book, you can find everyone here
 	/// </summary>
 	/// <returns>DtVrfObjectManager</returns>
-	inline DtVrfObjectManager& VRFObjectManager()
+	inline DtLocalObjectManager& VRFLocalObjectManager()
 	{
-		return *(VRFCgf()->vrfObjectManager());
+		return *(VRFCgf()->localObjectManager());
 	}
 
 	/// <summary>

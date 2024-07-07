@@ -3,24 +3,20 @@
 #include "Config.h"
 #include "VRFCore.h"
 
-using namespace fmt;
-using namespace std;
-
 namespace BasicVRFBEPlugin
 {
-	class MyStartingPoint
+	class MyStartingPoint final
 	{
 		public:
 			/// <summary>
-			/// Default Constructor
+			/// Constructor
 			/// </summary>
 			/// <param name="cgf">The all important access into the VRF world</param>
-			MyStartingPoint(DtCgf* cgf, unique_ptr<Config> config);
+			MyStartingPoint(DtCgf* cgf, std::unique_ptr<Config> config);
 
-			/// <summary>
-			/// Default Destructor
-			/// </summary>
 			~MyStartingPoint();
+			MyStartingPoint(const MyStartingPoint&) = delete;
+			MyStartingPoint& operator=(const MyStartingPoint&) = delete;
 
 		private:
 			
@@ -94,6 +90,6 @@ namespace BasicVRFBEPlugin
 			/// <summary>
 			/// Configuration file
 			/// </summary>
-			unique_ptr<Config> config = nullptr;
+			std::unique_ptr<const Config> config = nullptr;
 	};
 }

@@ -6,13 +6,11 @@ namespace BasicVRFBEPlugin
     /// Default Constructor
     /// </summary>
     /// <param name="cgf">The all important access into the VRF world</param>
-    MyStartingPoint::MyStartingPoint(DtCgf* cgf, unique_ptr<Config> config)
+    MyStartingPoint::MyStartingPoint(DtCgf* cgf, std::unique_ptr<Config> config)
+        : cgf(cgf), config(std::move(config))
 	{
-		this->cgf = cgf;
-        this->config = move(config);
-
         AddCallbacks();
-        print("[{}]\n", __FUNCTION__);
+        fmt::print("[{}]\n", __FUNCTION__);
 	}
 
     /// <summary>
@@ -21,11 +19,7 @@ namespace BasicVRFBEPlugin
     MyStartingPoint::~MyStartingPoint()
 	{
         RemoveCallbacks();
-
-        cgf = nullptr;
-        config.reset();
-
-        print("[{}]\n", __FUNCTION__);
+        fmt::print("[{}]\n", __FUNCTION__);
 	}
 
     /// <summary>
@@ -55,7 +49,7 @@ namespace BasicVRFBEPlugin
     /// <param name="usr">Object that was passed in</param>
     void MyStartingPoint::PostLoadScenario(const DtScenario& scenario, void* usr)
     {
-        print("[{}]\n", __FUNCTION__);
+        fmt::print("[{}]\n", __FUNCTION__);
     }
 
     /// <summary>
@@ -64,7 +58,7 @@ namespace BasicVRFBEPlugin
     /// <param name="usr">Object that was passed in</param>
     void MyStartingPoint::PreCloseScenario(void* usr)
     {
-        print("[{}]\n", __FUNCTION__);
+        fmt::print("[{}]\n", __FUNCTION__);
     }
 
     /// <summary>
@@ -73,11 +67,11 @@ namespace BasicVRFBEPlugin
     /// <param name="usr">Object that was passed in</param>
     void MyStartingPoint::PostTick(void* usr)
     {
-        if (!config.get()->settings.get()->isEnablePostTickLogic)
+        if (!config.get()->getSettings().isEnablePostTickLogic)
         {
             return;
         }
         
-        print("[{}]\n", __FUNCTION__);
+        fmt::print("[{}]\n", __FUNCTION__);
     }
 }

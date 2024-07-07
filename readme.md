@@ -13,6 +13,7 @@
 - [Essential software](#essential-software)
 - [Development environment](#development-environment)
 - [Folder structure](#folder-structure)
+- [Development](#development)
 - [VS Build Configurations](#vs-build-configurations)
 - [vcpkg packages](#vcpkg-packages)
 - [Environment Variables](#environment-variables)
@@ -24,8 +25,9 @@
 2) Setup development environment with `vcpkg`
 3) Set environment variables (refer to `Environment Variables`)
 4) Open solution
-5) Build > Batch Build. Enable all configurations. Click "Build"
-6) Plugin is now inside VRF's plugin folder. Plugin's XML is in VRF's appData\plugins folder
+5) Adjust PropertySheets as needed. Check [Development](#development)
+6) Build > Batch Build. Enable all configurations. Click "Build"
+7) Plugin is now inside VRF's plugin folder. Plugin's XML is in VRF's appData\plugins folder
 
 ## Essential software
 - Visual Studio 2019
@@ -36,10 +38,12 @@
     - MSVC V142 - VS 2019 C++ x64/x86 build tools (Latest). This is used by vcpkg
 
 Tested Configurations
-| MAK VR-Forces | MAK VR-Link | MAK RTI |
-|---|---|---|
-| 4.7 | 5.4.1 | 4.5 |
-| 4.8 | 5.5 | 4.5.1 |
+| MAK VR-Forces | MAK VR-Link | MAK RTI | Qt |
+|---|---|---|---|
+| 4.7 | 5.4.1 | 4.5.1 | 5.10.1 |
+| 4.10 | 5.7 | 4.6.1 | 5.10.1 |
+| 5.0.1 | 5.8 | 4.6.1 | 5.15.2 |
+| 5.1.0 | 5.9 | 4.6.1 | 5.15.2 |
   
 ## Development environment
 - Visual Studio 2019
@@ -80,6 +84,29 @@ Tested Configurations
 └── vcpkg_installed
 ```
 
+## Development
+
+### Property Sheets
+
+Build configuration common to all projects should go into CommonProperties.props. Build configuration common to a Simulation Protocol (DIS, HLA13, HLA1516, HLA1516e), Debug or Release should go into Properties*.props. These files can be found in the root of the project. Some examples of configuration that should go into these files are Preprocessor Definitions, Include Directories, Link Dependencies, etc. These files can be edited in a text editor or by using Visual Studio > View > Other Windows > Property Manager.
+
+For different versions of VR-Forces, the `PreprocessorDefinitions` in `CommonProperties.props` need to be modified. They are listed below. 
+
+| MAK VR-Forces | PreprocessorDefinitions |
+|---|---|
+| 4.7 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_NO_RVALUE_REFERENCES;BOOST_FILESYSTEM_VERSION=2` |
+| 4.10 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD` |
+| 5.0, 5.1 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;RELWITHDEBUG;MAK_RELWITHDEBUG` |
+
+### Boost
+
+You are supposed to use the version of boost that comes with VR Forces. You can determine the version by going to VR-Forces-Install-folder/lib64. For convenience, some of the versions have been listed below
+
+| MAK VR-Forces | Boost |
+|---|---|
+| 4.7 | 1.46 |
+| 4.10 - 5.1 | 1.63 |
+
 ## VS Build Configurations
 - **ReleaseDIS, ReleaseHLA13, Release1516, Release1516e**
   - Equivalent to VRF's RelWithDebInfo
@@ -99,9 +126,9 @@ Tested Configurations
 ## vcpkg packages
 | Package  | Version  | Purpose  |
 |---|---|---|
-| spdlog | 1.8.5#2 | Logging |
+| spdlog | 1.13.0 | Logging |
 | fmt | bundled with spdlog | String formatting |
-| nlohmann-json | 3.9.1 | JSON SerDes |
+| nlohmann-json | 3.11.3 | JSON SerDes |
 
 ## Environment Variables
 Add all the below variables into system's environment variables (can also be added as user level environment variables)

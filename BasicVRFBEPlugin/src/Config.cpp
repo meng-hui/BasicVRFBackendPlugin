@@ -7,9 +7,6 @@
 
 #include <nlohmann/json.hpp>
 
-using namespace std::experimental::filesystem;
-using json = nlohmann::json;
-
 namespace BasicVRFBEPlugin
 {
     /// <summary>
@@ -19,26 +16,26 @@ namespace BasicVRFBEPlugin
 	Config::Config()
 	{
         // configure logging
-        auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
+        const auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
         console_sink->set_level(spdlog::level::warn);
 
         // 10MB log, 3 rotating files
-        auto rotating_file_sink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>("logs/myLog.txt", 1024 * 1024 * 10, 3);
+        const auto rotating_file_sink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>("logs/myLog.txt", 1024 * 1024 * 10, 3);
         rotating_file_sink->set_level(spdlog::level::trace);
 
         // configure default logger
-        spdlog::sinks_init_list sinks = { console_sink, rotating_file_sink };
-        auto logger = std::make_shared<spdlog::logger>("logger", sinks);
+        const spdlog::sinks_init_list sinks = { console_sink, rotating_file_sink };
+        const auto logger = std::make_shared<spdlog::logger>("logger", sinks);
         spdlog::register_logger(logger);
         spdlog::set_default_logger(logger);
 
         spdlog::flush_every(std::chrono::seconds(3));
         // change log pattern
-        spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%^%l%$] [thread %t] %v");
+        spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%^%l%$] [thread %t] %v", spdlog::pattern_time_type::local);
 
         // configure config file
-        string simulationProtocol = "DIS";
-        string plugin = "Plugin";
+        std::string simulationProtocol = "DIS";
+        std::string plugin = "Plugin";
 
 #ifdef DtDIS
         simulationProtocol = "DIS";
@@ -53,23 +50,27 @@ namespace BasicVRFBEPlugin
 #ifndef NDEBUG
         plugin = "Plugind";
 #endif
+        using namespace std::string_literals;
 
-        string dllName = "BasicVRFBE"s + simulationProtocol + plugin + ".dll"s;
+        std::string dllName = "BasicVRFBE"s + simulationProtocol + plugin + ".dll"s;
 
-        char dllPath[2048];
-        GetModuleFileNameA(GetModuleHandle(dllName.c_str()), dllPath, 2048);
-        path p(dllPath);
-        string jsonPath = p.parent_path().string() + '/' + p.stem().generic_string() + ".json";
+        constexpr int pathSize = 2048;
+        std::vector<char> dllPath(pathSize);
+        GetModuleFileName(GetModuleHandle(dllName.c_str()), &dllPath.at(0), pathSize);
+        std::experimental::filesystem::path p(dllPath.begin(), dllPath.end());
+        std::string jsonPath = p.parent_path().string() + '/' + p.stem().generic_string() + ".json";
 
-        if (!exists(jsonPath))
+        if (!std::experimental::filesystem::exists(jsonPath))
         {
             spdlog::info("[{}] No config file found. Creating default config file at {}\n", __FUNCTION__, jsonPath);
 
             //create default settings
-            settings = make_unique<Settings>();
-            settings->isEnable = true;
-            settings->isEnableDebugPrint = false;
-            settings->isEnablePostTickLogic = true;
+            settings = std::make_unique<Data::Settings>(Data::Settings
+            {
+                true, //isEnable
+                true, //isEnablePostTickLogic
+                false //isEnableDebugPrint
+            });
 
             //write config
             WriteConfig(settings.get(), jsonPath);
@@ -83,21 +84,20 @@ namespace BasicVRFBEPlugin
         }
 	}
 
-    /// <summary>
-    /// Default Destructor
-    /// </summary>
-    /// <returns></returns>
-    Config::~Config() {}
+    Data::Settings Config::getSettings() const
+    {
+        return *(settings.get());
+    }
 
     /// <summary>
     /// Writes a default config file to disk
     /// </summary>
     /// <param name="settings">Default settings</param>
     /// <param name="path">Path to config file</param>
-    void Config::WriteConfig(Settings* settings, string path)
+    void Config::WriteConfig(const Data::Settings* settings, const std::string& path)
     {
         //auto-magic serialization
-        json j = *settings;
+        nlohmann::json j = *settings;
 
         //write to file
         std::ofstream o(path);
@@ -108,14 +108,14 @@ namespace BasicVRFBEPlugin
     /// Reads config file from disk
     /// </summary>
     /// <param name="path">Path to config file</param>
-    void Config::ReadConfig(string path)
+    void Config::ReadConfig(const std::string& path)
     {
         //read file from disk
         std::ifstream i(path);
 
         //auto-magic deserialization
-        json j;
+        nlohmann::json j;
         i >> j;
-        settings = make_unique<Settings>(j.get<Settings>());
+        settings = std::make_unique<Data::Settings>(j.get<Data::Settings>());
     }
 }

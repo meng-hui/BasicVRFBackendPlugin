@@ -7,45 +7,36 @@
 #include <spdlog/sinks/rotating_file_sink.h>
 #include <spdlog/fmt/fmt.h>
 
-using namespace std;
-using namespace fmt;
-
-using namespace BasicVRFBEPlugin::Data;
-
 namespace BasicVRFBEPlugin
 {
-	class Config
+	class Config final
 	{
 		public:
-			/// <summary>
-			/// Default Constructor
-			/// </summary>
-			/// <returns></returns>
+			// Rule of Zero: Default destructor and delete copy constructor and copy assignment operator
+			
 			Config();
+			~Config() = default;
+			Config(const Config&) = delete;
+			Config& operator=(const Config&) = delete;
 
-			/// <summary>
-			/// Default Destructor
-			/// </summary>
-			/// <returns></returns>
-			~Config();
-
-			/// <summary>
-			/// Current settings
-			/// </summary>
-			std::unique_ptr<Settings> settings;
-
+			Data::Settings getSettings() const;
 		private:
 			/// <summary>
 			/// Writes a default config file to disk
 			/// </summary>
 			/// <param name="settings">Default settings</param>
 			/// <param name="path">Path to config file</param>
-			void WriteConfig(Settings* settings, string path);
+			static void WriteConfig(const BasicVRFBEPlugin::Data::Settings* settings, const std::string& path);
 
 			/// <summary>
 			/// Reads config file from disk
 			/// </summary>
 			/// <param name="path">Path to config file</param>
-			void ReadConfig(string path);
+			void ReadConfig(const std::string& path);
+
+			/// <summary>
+			/// Current settings
+			/// </summary>
+			std::unique_ptr<const BasicVRFBEPlugin::Data::Settings> settings;
 	};
 }
