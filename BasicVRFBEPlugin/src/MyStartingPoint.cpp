@@ -47,7 +47,7 @@ namespace BasicVRFBEPlugin
     /// </summary>
     /// <param name="scenario">Scenario information</param>
     /// <param name="usr">Object that was passed in</param>
-    void MyStartingPoint::PostLoadScenario(const DtScenario& scenario, void* usr)
+    void MyStartingPoint::PostLoadScenario(const DtScenario& scenario)
     {
         fmt::print("[{}]\n", __FUNCTION__);
     }
@@ -56,7 +56,7 @@ namespace BasicVRFBEPlugin
     /// This callback is triggered before a scenario is closed
     /// </summary>
     /// <param name="usr">Object that was passed in</param>
-    void MyStartingPoint::PreCloseScenario(void* usr)
+    void MyStartingPoint::PreCloseScenario()
     {
         fmt::print("[{}]\n", __FUNCTION__);
     }
@@ -65,7 +65,7 @@ namespace BasicVRFBEPlugin
     /// This callback is triggered every VRF update
     /// </summary>
     /// <param name="usr">Object that was passed in</param>
-    void MyStartingPoint::PostTick(void* usr)
+    void MyStartingPoint::PostTick()
     {
         if (!config.get()->getSettings().isEnablePostTickLogic)
         {
