@@ -39,7 +39,7 @@ namespace BasicVRFBEPlugin
 			static void PostLoadScenarioCallback(const DtScenario& scenario, void* usr)
 			{
 				MyStartingPoint* myStartingPoint = static_cast<MyStartingPoint*>(usr);
-				myStartingPoint->PostLoadScenario(scenario, usr);
+				myStartingPoint->PostLoadScenario(scenario);
 			}
 
 			/// <summary>
@@ -47,7 +47,7 @@ namespace BasicVRFBEPlugin
 			/// </summary>
 			/// <param name="scenario">Scenario information</param>
 			/// <param name="usr">Object that was passed in</param>
-			void PostLoadScenario(const DtScenario& scenario, void* usr);
+			void PostLoadScenario(const DtScenario& scenario);
 
 			/// <summary>
 			/// This callback is triggered before a scenario is closed
@@ -56,14 +56,14 @@ namespace BasicVRFBEPlugin
 			static void PreCloseScenarioCallback(void* usr)
 			{
 				MyStartingPoint* myStartingPoint = static_cast<MyStartingPoint*>(usr);
-				myStartingPoint->PreCloseScenario(usr);
+				myStartingPoint->PreCloseScenario();
 			}
 
 			/// <summary>
 			/// This callback is triggered before a scenario is closed
 			/// </summary>
 			/// <param name="usr">Object that was passed in</param>
-			void PreCloseScenario(void* usr);
+			void PreCloseScenario();
 
 			/// <summary>
 			/// This callback is triggered every VRF update
@@ -73,14 +73,14 @@ namespace BasicVRFBEPlugin
 			static void PostTickCallback(void* usr)
 			{
 				MyStartingPoint* myStartingPoint = static_cast<MyStartingPoint*>(usr);
-				myStartingPoint->PostTick(usr);
+				myStartingPoint->PostTick();
 			}
 
 			/// <summary>
 			/// This callback is triggered every VRF update
 			/// </summary>
 			/// <param name="usr">Object that was passed in</param>
-			void PostTick(void* usr);
+			void PostTick();
 
 			/// <summary>
 			/// The all important access into the VRF world
