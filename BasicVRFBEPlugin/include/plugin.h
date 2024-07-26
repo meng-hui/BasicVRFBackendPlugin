@@ -5,6 +5,8 @@
 #include "VRFCore.h"
 
 #include <memory>
+#include <boost/asio.hpp>
+#include <boost/thread.hpp>
 #include <vrfcgf/vrfPluginExtension.h>				//mandatory VRF plugin callbacks
 
 #ifdef EXPORT_FUNCTIONS
@@ -48,3 +50,8 @@ NO_NAME_MANGLING DT_VRF_DLL_PLUGIN void DtUnloadVrfPlugin();
 NO_NAME_MANGLING DT_VRF_DLL_PLUGIN void DtPluginInformation(DtVrfPluginInformation& info);
 
 std::unique_ptr<BasicVRFBEPlugin::MyStartingPoint> myStartingPoint = nullptr;
+
+void NetworkUpdate(const boost::asio::ip::address& listenAddress, short port);
+
+boost::asio::io_service io_service;
+boost::thread t;

@@ -69,7 +69,9 @@ namespace BasicVRFBEPlugin
             {
                 true, //isEnable
                 true, //isEnablePostTickLogic
-                false //isEnableDebugPrint
+                false, //isEnableDebugPrint
+                "0.0.0.0", //listenAddress
+                12345, //listenPort
             });
 
             //write config

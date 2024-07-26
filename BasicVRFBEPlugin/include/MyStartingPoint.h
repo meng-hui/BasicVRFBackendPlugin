@@ -18,6 +18,8 @@ namespace BasicVRFBEPlugin
 			MyStartingPoint(const MyStartingPoint&) = delete;
 			MyStartingPoint& operator=(const MyStartingPoint&) = delete;
 
+			void onDataReceived(std::vector<char> data);
+
 		private:
 			
 			/// <summary>

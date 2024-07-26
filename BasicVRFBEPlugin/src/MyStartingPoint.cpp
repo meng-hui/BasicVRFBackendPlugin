@@ -22,6 +22,12 @@ namespace BasicVRFBEPlugin
         fmt::print("[{}]\n", __FUNCTION__);
 	}
 
+    void MyStartingPoint::onDataReceived(std::vector<char> data)
+    {
+        std::string receivedData(data.begin(), data.end());
+        fmt::print("[{}] {}\n", __FUNCTION__, receivedData);
+    }
+
     /// <summary>
     /// Subscribe to VR-Force callbacks
     /// </summary>

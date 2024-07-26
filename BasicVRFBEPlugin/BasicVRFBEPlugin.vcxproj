@@ -203,12 +203,14 @@
     <ClInclude Include="include\Data\Settings.h" />
     <ClInclude Include="include\MyStartingPoint.h" />
     <ClInclude Include="include\plugin.h" />
+    <ClInclude Include="include\UDPNetwork.h" />
     <ClInclude Include="include\VRFCore.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Config.cpp" />
     <ClCompile Include="src\MyStartingPoint.cpp" />
     <ClCompile Include="src\plugin.cxx" />
+    <ClCompile Include="src\UDPNetwork.cpp" />
     <ClCompile Include="src\VRFCore.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)/Microsoft.Cpp.targets" />

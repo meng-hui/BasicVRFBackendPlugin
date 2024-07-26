@@ -1,4 +1,5 @@
 #include "plugin.h"
+#include "UDPNetwork.h"
 
 void DtPluginInformation(DtVrfPluginInformation& info)
 {
@@ -22,7 +23,12 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
     std::unique_ptr<Config> config = std::make_unique<Config>();
     if (config.get()->getSettings().isEnable)
     {
+        const boost::asio::ip::address listen_address = boost::asio::ip::address::from_string(config.get()->getSettings().listenAddress);
+        const auto port = config.get()->getSettings().listenPort;
+
         myStartingPoint = std::make_unique<MyStartingPoint>(cgf, move(config));
+
+        t = boost::thread(boost::bind(&NetworkUpdate, listen_address, port));
     }
     else
     {
@@ -30,6 +36,19 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
     }
 
     return true;
+}
+
+void NetworkUpdate(const boost::asio::ip::address& listenAddress, short port)
+{
+    using namespace BasicVRFBEPlugin;
+
+    UDPNetwork udpNetwork(io_service, listenAddress, port);
+
+    udpNetwork.registerCallback([](std::vector<char> data) {
+        myStartingPoint->onDataReceived(data);
+    });
+
+    io_service.run();
 }
 
 bool DtPostInitializeVrfPlugin(DtCgf* cgf)
