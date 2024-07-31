@@ -20,7 +20,7 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
 
     VRFCore::cgf = cgf;
 
-    std::unique_ptr<Config> config = std::make_unique<Config>();
+    std::unique_ptr<Config> config = std::make_unique<Config>("simLogger");
     if (config.get()->getSettings().isEnable)
     {
         const boost::asio::ip::address listen_address = boost::asio::ip::address::from_string(config.get()->getSettings().listenAddress);

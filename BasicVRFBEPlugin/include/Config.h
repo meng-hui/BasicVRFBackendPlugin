@@ -1,11 +1,7 @@
 #pragma once
 
 #include "Data/Settings.h"
-
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/stdout_color_sinks.h>
-#include <spdlog/sinks/rotating_file_sink.h>
-#include <spdlog/fmt/fmt.h>
+#include <boost/optional.hpp>
 
 namespace BasicVRFBEPlugin
 {
@@ -14,7 +10,7 @@ namespace BasicVRFBEPlugin
 		public:
 			// Rule of Zero: Default destructor and delete copy constructor and copy assignment operator
 			
-			Config();
+			Config(std::string loggerName, boost::optional<std::string> configPath = boost::none);
 			~Config() = default;
 			Config(const Config&) = delete;
 			Config& operator=(const Config&) = delete;

@@ -1,5 +1,7 @@
 #include "MyStartingPoint.h"
 
+#include <spdlog/fmt/fmt.h>
+
 namespace BasicVRFBEPlugin
 {
     /// <summary>
