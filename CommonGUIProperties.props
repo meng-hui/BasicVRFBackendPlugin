@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <PluginName>BasicVRFBE</PluginName>
+    <PluginName>BasicVRFFE</PluginName>
   </PropertyGroup>
   <PropertyGroup>
     <TargetName>$(PluginName)$(SimulationProtocol)Plugin$(DLLSuffix)</TargetName>
@@ -17,7 +17,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;$(MAK_RTIDIR)/include/$(SimulationProtocol)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;$(MAK_RTIDIR)/include/$(SimulationProtocol);$(QT_DIR)/include;$(QT_DIR)/include/QtCore;$(QT_DIR)/include/QtGui;$(QT_DIR)/include/QtWidgets</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
@@ -31,21 +31,17 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <CompileAs>CompileAsCpp</CompileAs>
       <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;RELWITHDEBUG;MAK_RELWITHDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;RELWITHDEBUG;MAK_RELWITHDEBUG;QT_DLL;QT_THREAD_SUPPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;BOOST_ALL_DYN_LINK=1;DT_DLL_BUILD;DT_USE_DLL;VRFPLUGIN_EXPORTS;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)/build/$(Platform)/$(Configuration);$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);$(MAK_RTIDIR)/lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>readerWriter$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/build/$(Platform)/$(Configuration);$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);$(MAK_RTIDIR)/lib;$(QT_DIR)/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vrvCore.lib;Qt5Gui.lib;Qt5Core.lib;Qt5Widgets.lib;vrfGuiCoreQt.lib;vrfGuiCommonQt.lib;vrfGuiCore.lib;readerWriter$(DLLSuffix).lib;vlutil$(DLLSuffix).lib;matrix$(DLLSuffix).lib;vrfutil$(DLLSuffix).lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <ProgramDatabaseFile>$(SolutionDir)/build/$(Platform)/$(Configuration)/$(ProjectName)/$(PluginName)$(SimulationProtocol)Plugin$(DLLSuffix).pdb</ProgramDatabaseFile>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
-    <PreBuildEvent>
-      <Command>xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="PluginName">

@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugDIS|x64">
+      <Configuration>DebugDIS</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugHLA13|x64">
+      <Configuration>DebugHLA13</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugHLA1516e|x64">
+      <Configuration>DebugHLA1516e</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugHLA1516|x64">
+      <Configuration>DebugHLA1516</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDIS|x64">
+      <Configuration>ReleaseDIS</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseHLA13|x64">
+      <Configuration>ReleaseHLA13</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseHLA1516e|x64">
+      <Configuration>ReleaseHLA1516e</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseHLA1516|x64">
+      <Configuration>ReleaseHLA1516</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{39B53694-6122-49AA-B665-B4A14D40E5EF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>BasicVRFFEPlugin</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesDIS.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA13.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'" Label="PropertySheets">
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516e.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'" Label="PropertySheets">
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'" Label="PropertySheets">
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA13.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'" Label="PropertySheets">
+    <Import Project="$(SolutionDir)PropertiesDebug.props" />
+    <Import Project="$(SolutionDir)PropertiesDIS.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">
+    <Import Project="$(SolutionDir)PropertiesRelease.props" />
+    <Import Project="$(SolutionDir)PropertiesHLA1516e.props" />
+    <Import Project="$(SolutionDir)CommonGUIProperties.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516e|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA1516|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugHLA13|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDIS|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516e|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA1516|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseHLA13|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDIS|x64'">
+    <ClCompile />
+    <ProjectReference />
+    <PostBuildEvent />
+    <PreBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\BasicVRFBEPlugin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BasicVRFBEPlugin\include\Config.h" />
+    <ClInclude Include="include\guiPlugin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BasicVRFBEPlugin\src\Config.cpp" />
+    <ClCompile Include="src\guiPlugin.cxx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
