@@ -1,7 +1,8 @@
 #pragma once
 
 #include "Config.h"
-#include "VRFCore.h"
+
+#include <vrfcgf/cgf.h>
 
 namespace BasicVRFBEPlugin
 {

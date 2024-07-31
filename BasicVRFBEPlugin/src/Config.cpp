@@ -6,6 +6,10 @@
 #include <Windows.h>
 
 #include <nlohmann/json.hpp>
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+#include <spdlog/sinks/rotating_file_sink.h>
+#include <spdlog/fmt/fmt.h>
 
 namespace BasicVRFBEPlugin
 {
