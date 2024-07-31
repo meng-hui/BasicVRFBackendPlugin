@@ -6,6 +6,10 @@
 #include <Windows.h>
 
 #include <nlohmann/json.hpp>
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+#include <spdlog/sinks/rotating_file_sink.h>
+#include <spdlog/fmt/fmt.h>
 
 namespace BasicVRFBEPlugin
 {
@@ -13,19 +17,19 @@ namespace BasicVRFBEPlugin
     /// Default Constructor
     /// </summary>
     /// <returns></returns>
-	Config::Config()
+	Config::Config(std::string loggerName, boost::optional<std::string> configPath)
 	{
         // configure logging
         const auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
         console_sink->set_level(spdlog::level::warn);
 
         // 10MB log, 3 rotating files
-        const auto rotating_file_sink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>("logs/myLog.txt", 1024 * 1024 * 10, 3);
+        const auto rotating_file_sink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>(fmt::format("logs/{}.txt", loggerName), 1024 * 1024 * 10, 3);
         rotating_file_sink->set_level(spdlog::level::trace);
 
         // configure default logger
         const spdlog::sinks_init_list sinks = { console_sink, rotating_file_sink };
-        const auto logger = std::make_shared<spdlog::logger>("logger", sinks);
+        const auto logger = std::make_shared<spdlog::logger>(loggerName, sinks);
         spdlog::register_logger(logger);
         spdlog::set_default_logger(logger);
 
@@ -58,7 +62,12 @@ namespace BasicVRFBEPlugin
         std::vector<char> dllPath(pathSize);
         GetModuleFileName(GetModuleHandle(dllName.c_str()), &dllPath.at(0), pathSize);
         std::experimental::filesystem::path p(dllPath.begin(), dllPath.end());
-        std::string jsonPath = p.parent_path().string() + '/' + p.stem().generic_string() + ".json";
+        std::string jsonPath = fmt::format("{}/{}.json", p.parent_path().string(), p.stem().generic_string());
+
+        if (configPath)
+        {
+            jsonPath = configPath.value();
+        }
 
         if (!std::experimental::filesystem::exists(jsonPath))
         {

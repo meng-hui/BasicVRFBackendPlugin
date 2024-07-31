@@ -19,7 +19,7 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
 
     VRFCore::cgf = cgf;
 
-    std::unique_ptr<Config> config = std::make_unique<Config>();
+    std::unique_ptr<Config> config = std::make_unique<Config>("simLogger");
     if (config.get()->getSettings().isEnable)
     {
         myStartingPoint = std::make_unique<MyStartingPoint>(cgf, move(config));
