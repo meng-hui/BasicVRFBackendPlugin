@@ -27,6 +27,11 @@ namespace BasicVRFBEPlugin
     void MyStartingPoint::onDataReceived(std::vector<char> data)
     {
         std::string receivedData(data.begin(), data.end());
+
+        // Remove trailing null characters
+        auto end = std::find(receivedData.begin(), receivedData.end(), '\0');
+        receivedData.erase(end, receivedData.end());
+
         fmt::print("[{}] {}\n", __FUNCTION__, receivedData);
     }
 
