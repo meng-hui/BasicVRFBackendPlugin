@@ -1,19 +1,14 @@
 #pragma once
 
 #include "Data/Settings.h"
-#include <boost/optional.hpp>
+#include <optional>
 
 namespace BasicVRFBEPlugin
 {
 	class Config final
 	{
 		public:
-			// Rule of Zero: Default destructor and delete copy constructor and copy assignment operator
-			
-			Config(std::string loggerName, boost::optional<std::string> configPath = boost::none);
-			~Config() = default;
-			Config(const Config&) = delete;
-			Config& operator=(const Config&) = delete;
+			Config(std::string loggerName, std::optional<std::string> configPath = std::nullopt);
 
 			Data::Settings getSettings() const;
 		private:
@@ -22,7 +17,7 @@ namespace BasicVRFBEPlugin
 			/// </summary>
 			/// <param name="settings">Default settings</param>
 			/// <param name="path">Path to config file</param>
-			static void WriteConfig(const BasicVRFBEPlugin::Data::Settings* settings, const std::string& path);
+			static void WriteConfig(const Data::Settings& settings, const std::string& path);
 
 			/// <summary>
 			/// Reads config file from disk
@@ -33,6 +28,6 @@ namespace BasicVRFBEPlugin
 			/// <summary>
 			/// Current settings
 			/// </summary>
-			std::unique_ptr<const BasicVRFBEPlugin::Data::Settings> settings;
+			Data::Settings settings;
 	};
 }
