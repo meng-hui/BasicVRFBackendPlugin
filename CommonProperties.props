@@ -17,6 +17,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;$(MAK_RTIDIR)/include/$(SimulationProtocol)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -31,7 +32,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <CompileAs>CompileAsCpp</CompileAs>
       <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;RELWITHDEBUG;MAK_RELWITHDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_LIB_TOOLSET="vc141";BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;RELWITHDEBUG;MAK_RELWITHDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatSpecificWarningsAsErrors>4033;4716;4715;4033;4716;4715</TreatSpecificWarningsAsErrors>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)/build/$(Platform)/$(Configuration);$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);$(MAK_RTIDIR)/lib</AdditionalLibraryDirectories>
@@ -44,6 +46,26 @@
     </ProjectReference>
     <PreBuildEvent>
       <Command>xcopy /y /d "$(ProjectDir)$(ProjectName).xml" "$(MAK_VRFDIR)/appData/plugins"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\abseil_dll.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\abseil_dll.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\cares.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\cares.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\fmt.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\fmt.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libcrypto-3-x64.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libcrypto-3-x64.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libprotobuf.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libprotobuf.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libprotobuf-lite.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libprotobuf-lite.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libssl-3-x64.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\libssl-3-x64.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\re2.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\re2.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\spdlog.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\spdlog.pdb" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\zlib1.dll" "$(MAK_VRFDIR)/bin64"
+xcopy /y /d "$(SolutionDir)vcpkg_installed\x64-windows\x64-windows\bin\zlib.pdb" "$(MAK_VRFDIR)/bin64"
       </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>

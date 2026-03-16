@@ -69,7 +69,7 @@ namespace BasicVRFBEPlugin
     /// <param name="usr">Object that was passed in</param>
     void MyStartingPoint::PostTick()
     {
-        if (!config.get()->getSettings().isEnablePostTickLogic)
+        if (!config->getSettings().isEnablePostTickLogic)
         {
             return;
         }

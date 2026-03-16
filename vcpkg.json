@@ -13,7 +13,7 @@
   "overrides": [
     { 
       "name": "abseil", 
-      "version": "20230125.3", 
+      "version": "20230125.3",
       "port-version": 1
     },
     { 

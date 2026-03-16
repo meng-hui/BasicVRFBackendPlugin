@@ -1,5 +1,8 @@
 #include "plugin.h"
 
+std::unique_ptr<BasicVRFBEPlugin::MyStartingPoint> myStartingPoint;
+std::unique_ptr<ServerImpl> g_grpc_server;
+
 void DtPluginInformation(DtVrfPluginInformation& info)
 {
     fmt::print("[{}]\n", __FUNCTION__);
@@ -20,9 +23,9 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
     VRFCore::cgf = cgf;
 
     std::unique_ptr<Config> config = std::make_unique<Config>("simLogger");
-    if (config.get()->getSettings().isEnable)
+    if (config->getSettings().isEnable)
     {
-        myStartingPoint = std::make_unique<MyStartingPoint>(cgf, move(config));
+        myStartingPoint = std::make_unique<MyStartingPoint>(cgf, std::move(config));
     }
     else
     {

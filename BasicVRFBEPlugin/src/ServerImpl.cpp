@@ -1,21 +1,21 @@
 #include "ServerImpl.h"
 
-#include <fmt/core.h>
+#include <spdlog/fmt/fmt.h>
 #include <spdlog/spdlog.h>
 
 
 ServerImpl::ServerImpl(std::unique_ptr<VRFServerPlugin::CgfHelper> cgfHelper) 
     :
     cgfHelper(std::move(cgfHelper)),
-    logger(spdlog::get("logger"))
+    logger(spdlog::get("simLogger"))
 {
 }
 
 ServerImpl::~ServerImpl()
 {
-	server_->Shutdown();
-	// Always shutdown the completion queue after the server.
-	cq_->Shutdown();
+	if (server_thread_.joinable()) {
+		Shutdown();
+	}
 }
 
 void ServerImpl::Run(uint16_t port)
@@ -33,7 +33,7 @@ void ServerImpl::Run(uint16_t port)
     cq_ = builder.AddCompletionQueue();
     // Finally assemble the server.
     server_ = builder.BuildAndStart();
-    logger->info("Server listening on {}", server_address);
+    if (logger) logger->info("Server listening on {}", server_address);
 
     // Proceed to the server's main loop in a separate thread.
     server_thread_ = std::thread([this]() { HandleRpcs(); });
