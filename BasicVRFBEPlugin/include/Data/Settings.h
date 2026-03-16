@@ -6,9 +6,8 @@ namespace BasicVRFBEPlugin
 {
 	namespace Data
 	{
-		class Settings final
+		struct Settings final
 		{
-			public:
 				bool isEnable = true;
 				bool isEnablePostTickLogic = true;
 				bool isEnableDebugPrint = false;

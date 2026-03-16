@@ -2,7 +2,6 @@
 
 #include <filesystem>
 #include <fstream>
-#include <iomanip>
 #include <Windows.h>
 
 #include <nlohmann/json.hpp>
@@ -17,7 +16,7 @@ namespace BasicVRFBEPlugin
     /// Default Constructor
     /// </summary>
     /// <returns></returns>
-	Config::Config(std::string loggerName, boost::optional<std::string> configPath)
+	Config::Config(std::string loggerName, std::optional<std::string> configPath)
 	{
         // configure logging
         const auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
@@ -60,31 +59,31 @@ namespace BasicVRFBEPlugin
 
         constexpr int pathSize = 2048;
         std::vector<char> dllPath(pathSize);
-        GetModuleFileName(GetModuleHandle(dllName.c_str()), &dllPath.at(0), pathSize);
-        std::experimental::filesystem::path p(dllPath.begin(), dllPath.end());
+        GetModuleFileName(GetModuleHandle(dllName.c_str()), dllPath.data(), pathSize);
+        std::filesystem::path p(dllPath.begin(), dllPath.end());
         std::string jsonPath = fmt::format("{}/{}.json", p.parent_path().string(), p.stem().generic_string());
 
         if (configPath)
         {
-            jsonPath = configPath.value();
+            jsonPath = *configPath;
         }
 
-        if (!std::experimental::filesystem::exists(jsonPath))
+        if (!std::filesystem::exists(jsonPath))
         {
             spdlog::info("[{}] No config file found. Creating default config file at {}\n", __FUNCTION__, jsonPath);
 
             //create default settings
-            settings = std::make_unique<Data::Settings>(Data::Settings
+            settings = Data::Settings
             {
                 true, //isEnable
                 true, //isEnablePostTickLogic
                 false, //isEnableDebugPrint
                 "0.0.0.0", //listenAddress
                 12345, //listenPort
-            });
+            };
 
             //write config
-            WriteConfig(settings.get(), jsonPath);
+            WriteConfig(settings, jsonPath);
         }
         else
         {
@@ -97,7 +96,7 @@ namespace BasicVRFBEPlugin
 
     Data::Settings Config::getSettings() const
     {
-        return *(settings.get());
+        return settings;
     }
 
     /// <summary>
@@ -105,10 +104,10 @@ namespace BasicVRFBEPlugin
     /// </summary>
     /// <param name="settings">Default settings</param>
     /// <param name="path">Path to config file</param>
-    void Config::WriteConfig(const Data::Settings* settings, const std::string& path)
+    void Config::WriteConfig(const Data::Settings& settings, const std::string& path)
     {
         //auto-magic serialization
-        nlohmann::json j = *settings;
+        nlohmann::json j = settings;
 
         //write to file
         std::ofstream o(path);
@@ -127,6 +126,6 @@ namespace BasicVRFBEPlugin
         //auto-magic deserialization
         nlohmann::json j;
         i >> j;
-        settings = std::make_unique<Data::Settings>(j.get<Data::Settings>());
+        settings = j.get<Data::Settings>();
     }
 }

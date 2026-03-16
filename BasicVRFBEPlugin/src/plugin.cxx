@@ -1,6 +1,10 @@
 #include "plugin.h"
 #include "UDPNetwork.h"
 
+std::unique_ptr<BasicVRFBEPlugin::MyStartingPoint> myStartingPoint;
+boost::asio::io_service io_service;
+boost::thread t;
+
 void DtPluginInformation(DtVrfPluginInformation& info)
 {
     fmt::print("[{}]\n", __FUNCTION__);
@@ -21,12 +25,12 @@ bool DtInitializeVrfPlugin(DtCgf* cgf)
     VRFCore::cgf = cgf;
 
     std::unique_ptr<Config> config = std::make_unique<Config>("simLogger");
-    if (config.get()->getSettings().isEnable)
+    if (config->getSettings().isEnable)
     {
-        const boost::asio::ip::address listen_address = boost::asio::ip::address::from_string(config.get()->getSettings().listenAddress);
-        const auto port = config.get()->getSettings().listenPort;
+        const boost::asio::ip::address listen_address = boost::asio::ip::address::from_string(config->getSettings().listenAddress);
+        const auto port = config->getSettings().listenPort;
 
-        myStartingPoint = std::make_unique<MyStartingPoint>(cgf, move(config));
+        myStartingPoint = std::make_unique<MyStartingPoint>(cgf, std::move(config));
 
         t = boost::thread(boost::bind(&NetworkUpdate, listen_address, port));
     }
