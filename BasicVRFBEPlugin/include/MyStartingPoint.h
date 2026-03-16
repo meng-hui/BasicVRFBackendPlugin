@@ -16,8 +16,11 @@ namespace BasicVRFBEPlugin
 			MyStartingPoint(DtCgf* cgf, std::unique_ptr<Config> config);
 
 			~MyStartingPoint();
+
 			MyStartingPoint(const MyStartingPoint&) = delete;
 			MyStartingPoint& operator=(const MyStartingPoint&) = delete;
+			MyStartingPoint(MyStartingPoint&&) = delete;
+			MyStartingPoint& operator=(MyStartingPoint&&) = delete;
 
 		private:
 			
@@ -86,11 +89,11 @@ namespace BasicVRFBEPlugin
 			/// <summary>
 			/// The all important access into the VRF world
 			/// </summary>
-			DtCgf* cgf = nullptr;
+			DtCgf* cgf;
 
 			/// <summary>
 			/// Configuration file
 			/// </summary>
-			std::unique_ptr<const Config> config = nullptr;
+			std::unique_ptr<const Config> config;
 	};
 }

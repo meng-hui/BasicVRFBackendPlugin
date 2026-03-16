@@ -17,6 +17,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>include;$(MAK_VRFDIR)/include;$(MAK_VRLDIR)/include;$(MAK_RTIDIR)/include;$(MAK_RTIDIR)/include/$(SimulationProtocol);$(QT_DIR)/include;$(QT_DIR)/include/QtCore;$(QT_DIR)/include/QtGui;$(QT_DIR)/include/QtWidgets</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -31,7 +32,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <CompileAs>CompileAsCpp</CompileAs>
       <DisableSpecificWarnings>4005;4251;4267;4311;4312;4275;4675;4250</DisableSpecificWarnings>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;RELWITHDEBUG;MAK_RELWITHDEBUG;QT_DLL;QT_THREAD_SUPPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;BOOST_ALL_DYN_LINK=1;DT_DLL_BUILD;DT_USE_DLL;VRFPLUGIN_EXPORTS;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;RELWITHDEBUG;MAK_RELWITHDEBUG;QT_DLL;QT_THREAD_SUPPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_LIB_TOOLSET="vc141";BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;BOOST_ALL_DYN_LINK=1;DT_DLL_BUILD;DT_USE_DLL;VRFPLUGIN_EXPORTS;IS_64BIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatSpecificWarningsAsErrors>4033;4716;4715;4033;4716;4715</TreatSpecificWarningsAsErrors>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)/build/$(Platform)/$(Configuration);$(MAK_VRFDIR)/lib64;$(MAK_VRFDIR)/lib64/$(Configuration);$(MAK_VRFDIR)/lib;$(MAK_VRFDIR)/lib/$(Configuration);/lib;/lib/$(Configuration);$(MAK_VRLDIR)/lib64;$(MAK_VRLDIR)/lib64/$(Configuration);/lib64;/lib64/$(Configuration);/lib/intel64/vc14;/lib/intel64/vc14/$(Configuration);$(MAK_RTIDIR)/lib;$(QT_DIR)/lib</AdditionalLibraryDirectories>

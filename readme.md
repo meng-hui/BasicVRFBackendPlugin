@@ -30,12 +30,12 @@
 7) Plugin is now inside VRF's plugin folder. Plugin's XML is in VRF's appData\plugins folder
 
 ## Essential software
-- Visual Studio 2019
+- Visual Studio 2022
   - Workloads
     - Desktop development with C++
   - Individual components
-    - MSVC V141 - VS 2017 C++ x64/x86 build tools (v14.16)
-    - MSVC V142 - VS 2019 C++ x64/x86 build tools (Latest). This is used by vcpkg
+    - MSVC v143 - VS 2022 C++ x64/x86 build tools (Latest)
+  - C++ Language Standard: C++17
 
 Tested Configurations
 | MAK VR-Forces | MAK VR-Link | MAK RTI | Qt |
@@ -44,12 +44,14 @@ Tested Configurations
 | 4.10 | 5.7 | 4.6.1 | 5.10.1 |
 | 5.0.1 | 5.8 | 4.6.1 | 5.15.2 |
 | 5.1.0 | 5.9 | 4.6.1 | 5.15.2 |
-  
+| 5.2.0 | 5.10 | 5.0.1 | 5.15.2 |
+
 ## Development environment
-- Visual Studio 2019
+- Visual Studio 2022
   - Configuration Properties (All Configurations)
-    - Windows SDK Version: 10.0.18362.0
-    - Platform Toolset: Visual Studio 2017 (v141)
+    - Windows SDK Version: 10.0.22621.0
+    - Platform Toolset: Visual Studio 2022 (v143)
+    - C++ Language Standard: ISO C++17 (/std:c++17)
 - Install [vcpkg](https://github.com/microsoft/vcpkg)
 ```
 > git clone https://github.com/microsoft/vcpkg
@@ -97,10 +99,12 @@ For different versions of VR-Forces, the `PreprocessorDefinitions` in `CommonPro
 | 4.7 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_NO_RVALUE_REFERENCES;BOOST_FILESYSTEM_VERSION=2` |
 | 4.10 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD` |
 | 5.0, 5.1 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;RELWITHDEBUG;MAK_RELWITHDEBUG` |
+| 5.2 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;DT_VRF_DLL_BUILD;DT_VRF_PLUGIN_EXPORTS;BUILDING_PLUGIN;DT_DLL_BUILD;DT_USE_DLL;IS_64BIT;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_LIB_TOOLSET="vc141";BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;RELWITHDEBUG;MAK_RELWITHDEBUG` |
 
 | MAK VR-Forces FE | PreprocessorDefinitions |
 |---|---|
 | 5.1 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;RELWITHDEBUG;MAK_RELWITHDEBUG;QT_DLL;QT_THREAD_SUPPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;BOOST_ALL_DYN_LINK=1;DT_DLL_BUILD;DT_USE_DLL;VRFPLUGIN_EXPORTS;IS_64BIT` |
+| 5.2 | `WIN32;_WINDOWS;NO_DFD_SUPPORT;NOMINMAX;RELWITHDEBUG;MAK_RELWITHDEBUG;QT_DLL;QT_THREAD_SUPPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BOOST_SIGNALS_DYN_LINK=1;BOOST_FILESYSTEM_DYN_LINK=1;BOOST_LIB_TOOLSET="vc141";BOOST_FILESYSTEM_VERSION=3;BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE=1;BOOST_SIGNALS_NO_DEPRECATION_WARNING=1;NIGHTLYBUILD;BOOST_ALL_DYN_LINK=1;DT_DLL_BUILD;DT_USE_DLL;VRFPLUGIN_EXPORTS;IS_64BIT` |
 
 ### Boost
 
@@ -110,6 +114,7 @@ You are supposed to use the version of boost that comes with VR Forces. You can 
 |---|---|
 | 4.7 | 1.46 |
 | 4.10 - 5.1 | 1.63 |
+| 5.2 | 1.84 |
 
 ## VS Build Configurations
 - **ReleaseDIS, ReleaseHLA13, Release1516, Release1516e**
@@ -154,4 +159,14 @@ Parameters for the application can be changed via an external configuration file
 | IsEnablePostTickLogic  | Boolean  | true or false  | Enable/disable code in PostTick  |
 
 ## Logging
-This basic plugin includes `spdlog` and it's bundled `fmt`. Trace logs and above are written to `<VR Forces folder>\bin64\logs\mylog.txt` and warnings and above are written to console. Configure spdlog in `Config.cpp` 
+This basic plugin includes `spdlog` and it's bundled `fmt`. Trace logs and above are written to `<VR Forces folder>\bin64\logs\mylog.txt` and warnings and above are written to console. Configure spdlog in `Config.cpp`
+
+## Archive branches
+The `vrf-5.1/*` branches preserve the VRF 4.7–5.1 compatible codebase (MSVC v141, C++14, Boost). These are archive-only and not actively maintained.
+
+| Branch | Source |
+|---|---|
+| `vrf-5.1/master` | `master` at time of VRF 5.2 migration |
+| `vrf-5.1/with_udp_server` | `feature/with_udp_server` |
+| `vrf-5.1/with_fe_plugin` | `feature/with_fe_plugin` |
+| `vrf-5.1/with_grpc_server` | `feature/with_grpc_server` |
